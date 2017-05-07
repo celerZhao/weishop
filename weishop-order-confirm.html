@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="format-detection" content="telephone=no,email=no"/>
+    <meta name="ML-Config" content="fullscreen=yes,preventMove=no"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <title>订单确认</title>
+    <link rel="stylesheet" href="css/global-mobile.css"/>
+    <link rel="stylesheet" href="css/layout-mobile.css"/>
+    <link rel="stylesheet" href="css/dialog.css"/>
+    <script>
+        var cssEl = document.createElement('style');
+        document.documentElement.firstElementChild.appendChild(cssEl);
+        function setPxPerRem() {
+            var dpr = 1;
+            var pxPerRem = document.documentElement.clientWidth * dpr / 32;
+            if (pxPerRem < 10) pxPerRem = 10;
+            if (pxPerRem > 20) pxPerRem = 20;
+            cssEl.innerHTML = 'html{font-size:' + pxPerRem + 'px!important;}';
+        }
+        setPxPerRem();
+    </script>
+</head>
+<body>
+<div class="container">
+<!--    <div class="topbar row mb-0">
+        <i class="icon-xiangxiafanye back"></i>
+
+        <div class="tit">大众储油卡</div>
+        <ul class="menu_ul_1">
+        </ul>
+    </div>-->
+
+    <div class="row  card-name pt-10 pb-10">
+        <div class="display-flex">
+            <div class="flex-1">
+                <img src="img/tuijian_03.jpg" alt=""/>
+            </div>
+            <div class="flex-2">
+                <div class="">大众加油卡</div>
+                <div class="fs-12 text-gray">按升储油，锁定油价，不必担心油价波动</div>
+                <div class="text-danger"><span class="fs-12">¥</span><span class="fs-24">1,288</span>.<span class="fs-12">00</span></div>
+            </div>
+        </div>
+    </div>
+
+    <ul class="row list-unstyled list-p5 list-border setdpwd mt-10">
+        <li>
+            <label>选择地区</label>
+            <a class="form-group mb-0 block" href="javascript:;">
+                <input id="area" class="form-control pr-15 text-black text-right bg-white" readonly="" data-value="2,234" value="广东省/深圳市">
+            </a>
+            <i class="iconfont icon-jiantou-copy2"></i>
+        </li>
+        <li>
+            <label>选择油品</label>
+            <a class="form-group mb-0 block" href="javascript:;">
+                <input id="oilType" class="form-control pr-15 text-black text-right bg-white" readonly="" value="V汽油92#">
+            </a>
+            <i class="iconfont icon-jiantou-copy2"></i>
+        </li>
+    </ul>
+
+    <ul class="row list-unstyled list-p5 setdpwd">
+        <li>
+            <label>选择升数</label>
+            <a href="javascript:;" class="pull-right" id="view_more_liter"><i class="iconfont icon-xiangshangfanye "></i></a>
+        </li>
+    </ul>
+    <div id="liter" class="bg_fff fluid-model text-center row pt-10 card-container border-bottom-line">
+        <div class="col-xs-4">
+            <span class="inner active" _val="200">200升</span>
+        </div>
+        <div class="col-xs-4">
+            <span class="inner" _val="350">350升</span>
+        </div>
+        <div class="col-xs-4">
+            <span class="inner" _val="650">650升</span>
+        </div>
+        <div class="col-xs-4">
+            <span class="inner" _val="1200">1200升</span>
+        </div>
+    </div>
+
+    <ul class="row list-unstyled list-p5 setdpwd">
+        <li>
+            <label>购买数量</label>
+                <div class=" text-right">
+                    <div class="clear num_add_minus text-center">
+                        <a href="javascript:;" class="pull-left num_minus">-</a>
+                        <input id="buy_num" class=" pull-left" type="tel" value="1" maxlength="2"/>
+                        <a href="javascript:;" class="pull-left num_add">+</a>
+                    </div>
+                </div>
+        </li>
+    </ul>
+
+    <div class="border-bottom-line"></div>
+    <ul class="row list-unstyled list-p5 setdpwd">
+        <li>
+            <label>兑付说明</label>
+            <a id="view-duifu" class="form-group mb-0 block" href="javascript:;">
+                <input class="form-control pr-15 text-black text-right bg-white" readonly="" value="">
+            </a>
+            <i class="iconfont icon-jiantou-copy2"></i>
+        </li>
+    </ul>
+    <div class="border-bottom-line"></div>
+    <div class="row card-name text-right fs-10 pt-10 pb-10">
+        共<span>1</span>件商品 &nbsp;&nbsp;&nbsp; 小计：<span class="text-danger"><span>¥</span><span class="fs-14">12,800.00</span></span>
+    </div>
+
+    <ul class="row list-unstyled list-p5 setdpwd pt-10">
+        <li>
+            <label>使用现金券</label>
+            <a class="form-group mb-0 block" href="javascript:;">
+                <input id="cash-quan" class="form-control pr-15 text-danger text-right bg-white" readonly="" value="未使用">
+            </a>
+            <i class="iconfont icon-jiantou-copy2"></i>
+        </li>
+    </ul>
+    <div class="border-bottom-line"></div>
+    <ul class="row list-unstyled list-p5 setdpwd">
+        <li class="relative">
+            <label>油箱抵扣 <span class="ico-info">i</span></label>
+            <a class="form-group mb-0 block mr-30 re" href="javascript:;">
+                <input id="oil-off" class="form-control pr-30  text-danger text-right bg-white" readonly=""  value="">
+                <a class="radio-a active" href="javascript:;"><i class="radio-i "></i></a>
+            </a>
+
+        </li>
+    </ul>
+
+
+    <!--<a id="fixedBtn" class="btn btn-danger btn-danger2 btn-fixed" href="javascript:;">立即购买</a>-->
+    <div class="row bg-white mt-30">
+        <div class="display-flex">
+            <div class="flex-2 text-right pt-15">
+                合计：<span class="text-danger fs-10">¥</span><span class="text-danger">12,800</span><span class="text-danger fs-10">.00</span>
+            </div>
+            <div class="flex-1 pr-0">
+                <div class="bg-danger2 text-white fs-16 text-center pt-10 pb-10 ">提交订单</div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="js/lib/jquery-1.11.3.min.js"></script>
+<script src="js/bOilPlugIn/bOilPlugIn.js"></script>
+<script src="js/lib/dialog.js"></script>
+<script src="js/lib/mobile-select-area.js"></script>
+<script>
+    var bOilApp = new bOilPlugIn(),
+            App = {
+                status: 0,   // 0 前端开发，1 后端开发
+                isHaspwd: 0,
+
+                init: function () {
+                    // 地区选择
+                    var selectArea = new MobileSelectArea();
+                    /**
+                     * 初始化 地区选择
+                     * value: "省id，市id"
+                     * text: ["广东省","深圳市"]
+                     */
+                    selectArea.init({trigger: '#area', data: "js/area_data.json", default: 0,value:"20,234", text:["广东省","深圳市"], position: "bottom", level: 2});
+
+                    /**
+                     * 油品json
+                     * @type {*[]}
+                     * id 序号，从 2 开始，
+                     */
+                    var json = [{
+                        "id": "2",
+                        "name": "国V汽油92#"
+                    }, {
+                        "id": "3",
+                        "name": "国V汽油97#"
+                    }, {
+                        "id": "4",
+                        "name": "国V柴油0#"
+                    }];
+                    var selectArea1 = new MobileSelectArea();
+                    selectArea1.init({trigger: '#oilType', data: json, default: 0, value:'2',text:["国V汽油92#"], position: "bottom", level: 1});
+
+                    // 展开 购买产品期数
+                    $("#view_more_liter").on("click",function(){
+                        $("#liter").toggleClass("show_more")
+                        $(this).find("i").toggleClass("icon-xiangxiafanye");
+                    });
+
+                    // 加减数量
+                    $(".num_minus").on("click",function(){
+                        var _num = Number($("#buy_num").val());
+                        var new_num = --_num >=1 ? _num:1;
+
+                        $("#buy_num").val(new_num);
+                    })
+                    $(".num_add").on("click",function(){
+                        var _num =Number($("#buy_num").val());
+                        var new_num = ++_num >=99 ? 99:_num;
+
+                        $("#buy_num").val(new_num);
+                    })
+
+                    // radio 开关
+                    $(".radio-a").on("click",function(){
+                        $(this).toggleClass("active");
+                    })
+
+                    // 底部弹框
+                    //通用弹层--不带按钮自适应高度提示框
+                    var _duifu = '<table class="table  text-center fs-12" >'
+                            +'<tbody>'
+                            +'<tr class="bg-default">'
+                            +'<td>兑付日</td>'
+                            +'<td>兑付数量</td>'
+                            +'</tr>'
+                            +'<tr>'
+                            +'<td>2017年05月04日</td>'
+                            +'<td>50.00升</td>'
+                            +'</tr>'
+                            +'<tr >'
+                            +'<td>2017年05月04日</td>'
+                            +'<td>50.00升</td>'
+                            +'</tr>'
+                            +'<tr >'
+                            +'<td>2017年05月04日</td>'
+                            +'<td>50.00升</td>'
+                            +'</tr>'
+                            +'<tr >'
+                            +'<td>2017年05月04日</td>'
+                            +'<td>50.00升</td>'
+                            +'</tr>'
+                            +'</tbody>'
+                            +'</table>';
+                    $('#view-duifu').on('click', function () {
+                        bOilApp.tips({
+                            title: '兑付说明',
+                            closeId: 'tipsCloseBtn',
+                            content: _duifu,
+                            alone: true,
+                            bottom:true    // 底部显示
+                        });
+                    });
+
+                }
+
+            };
+
+    $(function () {
+        App.init();
+    });
+</script>
+</body>
+</html>

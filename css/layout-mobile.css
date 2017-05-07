@@ -1,0 +1,1050 @@
+/**
+ *@Name:    layout-mobile.css
+ *@Object:  mobile
+ *@Author:  Herry Lau
+ *@E-mail:  liuhaiyueherry@sina.com
+ *@Time:    2017.05.05
+*/
+
+@charset "UTF-8";
+
+/* @ 公共设置 */
+html, body {
+    background-color: #f0f0f0;
+}
+
+.container {
+    margin-bottom: 2rem;
+}
+
+.btn {
+    border-radius: .5rem;
+}
+
+/* 蓝色字 */
+.text-primary {
+    color: #1955fa !important;
+}
+
+.text-primary:active {
+    color: #1955fa !important;
+}
+
+/* 主要标题颜色 */
+.text-tit {
+    color: #333;
+}
+
+/* 橙色字 */
+.text-orange {
+    color: #f85800 !important;
+}
+
+/* 红色字 */
+.text-danger {
+    color: #ff4848 !important;
+}
+
+/*白色（默认）*/
+.btn-default {
+    background-color: #fff;
+    border-color: #fff;
+    color: #161616;
+}
+
+.btn-default:active {
+    color: #161616 !important;
+    border-top: .1rem solid rgba(0, 0, 0, .125);
+}
+
+/* 橙色按钮 */
+.btn-orange {
+    border-color: #ff3200;
+    background-color: #ff3200;
+    color: #fff;
+}
+
+/* 红色按钮 */
+.btn-danger {
+    border-color: #f00;
+    background-color: #f00;
+}
+
+/* 红色按钮2 */
+.btn-danger2 {
+    border-color: #fc3635;
+    background-color: #fc3635;
+}
+
+/* 红色背景2 */
+.bg-danger2 {
+    background-color: #fc3635;
+    color: #fff;
+}
+
+/* 黄色背景 */
+.bg-warning {
+    background-color: #fff391 !important;
+}
+
+a.bg-warning:active {
+    background-color: #fcef87 !important;
+}
+
+/* 不可用按钮 */
+.btn.disabled, .btn[disabled],
+.btn.disabled.active, .btn[disabled].active {
+    color: #fff !important;
+}
+
+/* 列表 */
+.list-unstyled > li {
+    background-color: #fff !important;
+}
+
+.list-unstyled.list-border > li {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.list-unstyled.list-border > li:last-child {
+    border: none;
+}
+
+.full-list {
+    background-color: #fff;
+}
+
+/* 头部 */
+.topbar {
+    position: relative;
+    margin-bottom: 1rem;
+    padding: 0 1.5rem;
+    border-bottom: .1rem solid #e5e5e5;
+    color: #333;
+    background-color: #fff;
+}
+
+.topbar .tit {
+    padding: .8rem 0;
+    text-align: center;
+}
+
+.topbar .back, .topbar .usercenter {
+    position: absolute;
+    top: .8rem;
+}
+
+.topbar .usercenter {
+    right: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.topbar .back {
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    color: #333;
+}
+
+.topbar + .tipbar {
+    margin-top: -1rem;
+}
+
+/* 头部提示条 */
+.tipbar {
+    margin-bottom: 1rem;
+    padding: .5rem 1.5rem;
+    color: #f85800;
+    background-color: #fff391;
+    line-height: 1.2rem;
+}
+
+.tipbar .tip_link {
+    width: 95%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: #f85800;
+}
+
+/* 标题 */
+.pagetit {
+    margin: 0 -1.5rem;
+    padding: .8rem 1.5rem;
+    color: #a5a5a5;
+    background-color: #fff;
+}
+
+/* 充值选项模块 */
+.fluid-model {
+    padding: 0 1rem;
+}
+
+.fluid-model [class^='col-xs-'] {
+    margin-bottom: 1rem;
+    padding: 0;
+}
+
+.fluid-model .inner {
+    display: block;
+    margin: 0 .5rem;
+    padding: .5rem 0;;
+    border: .1rem solid #bbbbbb;
+    border-radius: .3rem;
+}
+
+.fluid-model .inner.active {
+    color: #fff;
+    border-color: #fc3635;
+    background-color: #fc3635;
+}
+
+/* 弹窗标题颜色 */
+.mask-inner .title {
+    color: #333 !important;
+}
+
+/* 弹窗底部确定按钮 */
+.mask-inner .btn-danger, .mask-inner .btn-submit {
+    color: #ff3200;
+    border-color: transparent;
+    background-color: transparent;
+}
+
+/* 表单 */
+.form-list > li {
+    position: relative;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.form-list > li > label {
+    position: absolute;
+    z-index: 2;
+    top: 2rem;
+    width: 7rem;
+    line-height: 1;
+    color: #000;
+}
+
+.form-list > li .form-control {
+    padding-left: 7.5rem;
+    padding-right: 0;
+}
+
+.form-list > li .left {
+    width: 66%;
+}
+
+.form-list > li .right {
+    width: 34%;
+}
+
+.form-control {
+    border: none;
+    background-color: #fff;
+}
+
+/* 底部logo */
+.bottom-logo {
+    margin-top: 5rem;
+    font-size: 1.2rem;
+    color: #b5b5b5;
+    line-height: 1.4;
+}
+
+.bottom-logo .logo {
+    margin-bottom: 1rem;
+    width: 25%;
+}
+
+/* 套餐 */
+.text-cc {
+    color: #ccc !important;
+}
+
+.text-a5 {
+    color: #a5a5a5 !important;
+}
+
+.mt-n8 {
+    margin-top: -.8rem;
+}
+
+.oc-tip-title {
+    background-color: #f8f8f8;
+    color: #7f7f7f;
+}
+
+.oc-form {
+    background-color: #fff;
+}
+
+.oc-form .form-group {
+    margin-bottom: 0;
+}
+
+.oc-form .form-group .form-control {
+    border: none;
+    background-color: transparent;
+}
+
+.oc-popup li {
+    padding: 0 15px;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.oc-popup li:last-child {
+    border-bottom: none;
+}
+
+.oc-popup input {
+    border: none;
+}
+
+.oc-order-icon {
+    border-bottom: 1px solid #ebebeb
+}
+
+.oc-order-icon span.suc,
+.oc-order-icon span.fail {
+    display: inline-block;
+    height: 3.6rem;
+    line-height: 3.6rem;
+    padding-left: 4.5rem;
+    background: url("../img/icon-suc.png") no-repeat 0 0;
+    background-size: auto 100%;
+}
+
+.oc-order-icon span.fail {
+    background-image: url("../img/icon-fail.png") !important;
+}
+
+.oc-buy {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.oc-buy li {
+    position: relative;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 0 0 8rem !important;
+}
+
+.oc-buy label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 8rem;
+    height: 50px;
+    line-height: 50px;
+}
+
+.oc-buy .form-group input {
+    border: none;
+    width: 100%;
+    background-color: #fff;
+}
+
+.oc-buy .form-group i {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 1.5rem;
+    font-size: 1.2rem;
+    text-align: right;
+}
+
+#rechargeDetail > div {
+    position: absolute;
+    top: 0;
+    right: 1.5rem;
+    height: 50px;
+    line-height: 50px;
+}
+
+#rechargeDetail .icon-jiantou-copy2 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 1.5rem;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1.2rem;
+    text-align: right;
+}
+
+.rechargeList li {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.rechargeList li:last-child {
+    border-bottom: none;
+}
+
+.bc-confirm {
+    padding: 1.5rem;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.bc-confirm > p {
+    margin-bottom: 0;
+    color: #333;
+}
+
+.bc-confirm > p > label {
+    width: 7rem;
+    margin-right: 1rem;
+    text-align: right;
+}
+
+.setdpwd > li i.icon-jiantou-copy2 {
+    position: absolute;
+    top: 50%;
+    right: 1.5rem;
+    margin-top: -1rem;
+    height: 2rem;
+    line-height: 2.3rem;
+    font-size: 1.2rem;
+}
+
+/* 设置支付密码 */
+.setdpwd > li {
+    position: relative;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.setdpwd > li > label {
+    position: absolute;
+    z-index: 2;
+    top: 1.6rem;
+    width: 10rem;
+    line-height: 1;
+    color: #000;
+}
+
+.setdpwd > li .form-control {
+    padding-left: 10.5rem;
+    padding-right: 0;
+}
+
+.setdpwd > li .left {
+    width: 68%;
+}
+
+.setdpwd > li .right {
+    width: 32%;
+}
+
+#body-bg {
+    background-color: #f5f5f9 !important;
+}
+
+.change-li > li {
+    margin-bottom: 1.5rem;
+    border-top: 1px solid #e5e5e5;
+}
+
+.change-li > li:last-child {
+    margin-bottom: 0;
+}
+
+/*====大众储油卡 start====*/
+.card-name {
+    padding: 0 1.5rem;
+    background: #ffffff;
+}
+
+/*充值明细列表*/
+.border-no {
+    border: none !important;
+}
+
+.hot-product {
+    border: 1px solid red;
+    line-height: 1.3rem;
+    border-radius: 3px;
+}
+
+.border-bottom-line {
+    border-bottom: 1px solid #e8e8e8;
+    background: #fafafa;
+}
+
+.iconfont {
+    font-size: 1.2rem !important;
+}
+
+.bg_fff {
+    background: #fff;
+}
+
+.num_add_minus {
+    display: inline-block;
+    margin-top: .5rem;
+}
+
+.num_add_minus a {
+    display: inline-block;
+    width: 2.4rem;
+    height: 2.4rem;
+    line-height: 2.2rem;
+    margin: 0;
+    color: #999;
+    background: #f5f5f5;
+    border: 0.1rem solid #ccc
+}
+
+.num_add_minus .num_minus {;
+}
+
+.num_add_minus input {
+    height: 2.4rem;
+    padding: 0;
+    line-height: 1;
+    border: none;
+    border-top: 0.1rem solid #ccc;
+    border-bottom: 0.1rem solid #ccc;
+    font-size: 1.4rem;
+    width: 4rem;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.quan-title {
+    margin: 0 -1.5rem;
+    padding: .8rem 1.5rem;
+    color: #a5a5a5;
+    background-color: #fafafa;
+}
+.quan{
+    width:4.2rem;
+}
+
+.pull-right .icon-xiangshangfanye,
+.pull-right .icon-xiangxiafanye,
+.pull-right .icon-jiantou-copy2{
+    position:relative;
+    top:1rem
+}
+
+.page-bar {
+    margin: 0 -1.5rem;
+    padding: .8rem 1.5rem;
+    color: #a5a5a5;
+    font-size: 1.0rem;
+}
+
+.page-bar .iconfont {
+    display: inline-block;
+    margin-top: -0.4rem;
+}
+
+.pingjia-container, .duifu-shuoming, .beishu, .tuijian {
+    margin: 0 -1.5rem;
+    padding: .8rem 1.5rem;
+}
+
+.pingjia-star {
+    margin-left: 0.4rem;
+    background: url(../img/star_0.png) no-repeat;
+    width: 1.4rem;
+    height: 1.4rem;
+    background-size: 100%;
+}
+
+.pingjia .start-light {
+    background: url(../img/star_1.png) no-repeat;
+    background-size: 100%;
+}
+
+.pingjia-all {
+    border: 0.1rem solid #ff0000;
+    border-radius: 1rem;
+    padding: 0.2rem 1rem;
+}
+
+.display-flex {
+    display: flex;
+}
+
+.flex-1 {
+    flex: 1;
+    padding: 0 0.4rem;
+}
+.flex-2 {
+    flex: 2;
+    padding: 0 0.4rem;
+}
+.flex-3 {
+    flex: 3;
+    padding: 0 0.4rem;
+}
+
+.img-beishu img {
+    width: 80%;
+}
+
+/*.container { width: 100%; max-width: 750px; background: #eee;}*/
+.top-fade {
+    border-bottom: 1px solid #ddd;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    max-width: 750px;
+    background: rgba(250, 250, 250, 1);
+}
+
+.top-fade-nav {
+    padding: .5rem 0;
+}
+
+.top-fade-nav a {
+    color: #b5b5b5;
+}
+
+.top-fade-nav a i {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.top-fade-nav a.active {
+    color: #db1515;
+}
+
+.top-fade-nav a.active i {
+    background: url(../img/cur_nav.png) no-repeat;
+    background-size: 100%;
+}
+
+.show_more {
+    height: 5rem;
+    overflow: hidden;
+}
+
+.ico-zan {
+    position: relative;
+    top: .15rem;
+    width: 16px;
+    height: 16px;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAXCAYAAADgKtSgAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3FpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1YjYwYzk5Ni0yOGY2LTExNDYtYjJjOC0wMzQyMzg4MWIxNzEiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6Qjc3MjM5OEUzMjI5MTFFN0EzM0NGMjIwNzA2QUE5Q0IiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6Qjc3MjM5OEQzMjI5MTFFN0EzM0NGMjIwNzA2QUE5Q0IiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjIwZjU2ZGNiLWYzMjctMzg0ZC05NmE4LWRiMjE3OTdjZjMwNyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo1YjYwYzk5Ni0yOGY2LTExNDYtYjJjOC0wMzQyMzg4MWIxNzEiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5Ge17LAAABgklEQVR42rSVTShFQRiGj+skSmLBTimiSCH5K7GULGwpNuqkbMjPklLKzlLnWFhYko1sLORmwb0bK7JxN2SDlEKRn2f0nZpu915zOfPV09uZad6ZM/PNNwW+7zuG0Q6bUA9xmISU53lZB8QMjQthG6phF/ph57dBpuYNUANzMAKz0ApNUZhXid6KHojWRmEervBa9F60IgrzcXiAC/kuE737r/kEdMA6fEhbc9qf/Ml8VEwvYVVrH4JHOM812M3QVg69kseDYjAAz9JfLJMqTQVBkD7+HQ5hQZmfQJd0zEMpLInZivCqDf6EjRyHqTyHocgV47jMtid5rA6qUcsKPd5gJvzIdEP5mzHED7flCJa1/pcsxqahbrIbc+xED5zZMlepm4jcnP2uQyrh1MbKO0UTNsy7VbaRRVe2Vp7Mp3CZ7ncJ0iIX04l65W1yQ5M2zNV+f6nD1AuXehMXYUur19OGW6G/s1OqhHCYT6H5MfQJN9oLs5bnqlU13Jf6/xPfAgwA8ZNReEDCO8YAAAAASUVORK5CYII=');
+    background-size: 100% auto;
+}
+.ico-info{
+    background:#bcbcbc;
+    color:#ffffff;
+    font-size:1rem;
+    width:1.2rem;
+    height:1.2rem;
+    border-radius:1rem;
+    padding:.15rem;
+    text-align:center;
+    font-weight:bolder;
+}
+/**==radio按钮==**/
+.radio-a{
+    position:absolute;
+    right:2rem;
+    top:1.5rem;
+    display:inline-block;
+    border:0.1rem solid #ccc;
+    border-radius:2rem;
+    width:3.5rem;
+    height:2rem;
+}
+.radio-a .radio-i{
+    border:0.1rem solid #ccc;
+    border-radius:2rem;
+    width:1.9rem;
+    height:1.8rem;
+}
+.radio-a.active{
+    text-align:right;
+}
+.radio-a.active .radio-i{
+    background: #fc3635;
+}
+
+/*====大众储油卡 end====*/
+
+/**********订单与支付start**********/
+/*订单支付成功-失败*/
+.container .bg-white .pay-suc {
+    width: 9rem;
+    margin: 3rem auto 0;
+    display: block;
+}
+
+.container .margin-default {
+    margin-bottom: 0;
+}
+
+.bg-white .text-gray p {
+    margin-bottom: 0
+}
+
+/*明细-充值*/
+.bk-co {
+    background-color: white;
+}
+
+.container .bk-order {
+    height: 3rem
+}
+
+.container .bk-order .text {
+    text-align: center;
+    width: 50%;
+}
+
+.container .order-detail {
+    background-color: #fff391;
+}
+
+.order-list .padding-default {
+    padding: 0 1.5rem
+}
+
+.recharge-list .padding-default {
+    padding: 0 1.5rem
+}
+
+.container .card {
+    background-color: #f5f5f9;
+}
+
+.bk-order .order-box {
+    border-bottom: 0.2rem solid #ff3200;
+    padding-bottom: 1rem;
+}
+
+.order-box a {
+    color: #ff3200;
+}
+
+#recharge a {
+    color: #000;
+}
+
+.list-unstyled li ul {
+    border-bottom: .1rem solid #f5f5f9;
+}
+
+/*明细样式调整-是否有必要*/
+.ul-padding {
+    padding: 1rem 0
+}
+
+.ul-padding li {
+    padding: 0
+}
+
+/*加油卡信息*/
+.padding-default li {
+    padding: 1rem 1.5rem
+}
+
+.padding-default li span {
+    width: 60%
+}
+
+.padding li {
+    padding: 0.5rem 1.5rem
+}
+
+.padding li span {
+    padding: 0 1.5rem 0 2rem;
+    color: #b5b5b5
+}
+
+.bk-co .box {
+    width: 100%;
+}
+
+.bk-co > ul + ul > li:first-child {
+    border-top: 0 !important;
+}
+
+/***********订单与支付 end***********/
+
+/*用户登录*/
+.login-li span.right a {
+    border-left: 1px solid #ccc !important;
+}
+
+.btn-white,
+.btn-white.disabled,
+.btn-white.active {
+    border-color: #fff;
+    border-left: 1px solid #ccc !important;
+    background-color: #fff !important;
+    color: #ff3200;
+}
+
+.btn-white.disabled {
+    border-left: 1px solid #ccc !important;
+    color: #ccc;
+}
+
+.login-li .btn.disabled,
+.login-li .btn[disabled],
+.login-li .btn.disabled.active,
+.login-li .btn[disabled].active {
+    border-color: #fff !important;
+    border-left: 1px solid #ccc !important;
+    background-color: #fff !important;
+    color: #888 !important;
+    cursor: not-allowed;
+}
+
+.login-li .btn:active,
+.login-li .btn.active {
+    -webkit-box-shadow: inset 0 0.3rem 0.5rem rgba(0, 0, 0, 0);
+}
+
+/*倒计时*/
+.user-img {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-top: -0.5rem
+}
+
+.bk-color {
+    background-color: #f2f2f2;
+    height: 3.5rem;
+}
+
+.per-center li {
+    padding: 1.5rem 1.5rem;
+}
+
+.break {
+    height: 1rem;
+    background-color: #f8f8f8;
+}
+
+.recharge-list ul {
+    background-color: white;
+}
+
+.order-list ul {
+    background-color: white;
+}
+
+.card {
+    padding: 0 1.5rem;
+    border-bottom: .1rem solid #f8f8f8;
+}
+
+.bk-order {
+    background-color: white;
+    height: 4rem;
+}
+
+.text {
+    text-align: center;
+    width: 50%;
+}
+
+.date {
+    background-color: #f8f8f8;
+    height: 3rem;
+}
+
+.order-box {
+    border-bottom: 0.2rem solid #e32d01;
+    padding-bottom: 1rem;
+}
+
+#recharge a {
+    color: black;
+}
+
+.introduce {
+    color: white;
+    font-size: 1rem;
+}
+
+.bk-new {
+    background-color: #e7f1fb;
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+}
+
+.li-a {
+    color: #000;
+    width: 100%;
+}
+
+.sell-out {
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+}
+
+.sells {
+    width: 11rem;
+    height: 11rem;
+    margin: 4rem auto;
+    display: block;
+}
+
+.dis {
+    text-align: center;
+    color: #666;
+}
+
+.marg {
+    margin-bottom: 0
+}
+
+/* 支付 s */
+.bg-none {
+    background-color: transparent !important;
+}
+
+.bg-gray {
+    background-color: #c0c0c0;
+}
+
+.p-10 {
+    padding: 1rem;
+}
+
+.p-15 {
+    padding: 1.5rem;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.radius0 {
+    border-radius: 0;
+}
+
+.oil-storage li {
+    margin-bottom: 1.5rem;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
+}
+
+.order-num {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.oil-storage-btn .btn {
+    width: 31%;
+    margin: 0 .25rem;
+    padding: .35rem 0;
+    border-radius: .4rem;
+}
+
+.add-oil-tab div a {
+    display: inline-block;
+    padding: 1rem 1.5rem;
+    border-bottom: 2px solid #fff;
+    color: #bfbfbf;
+}
+
+.add-oil-tab div.active a {
+    border-color: #fc3635;
+    color: #fc3635;
+}
+
+.send-oil label a {
+    color: #00a3f8;
+    text-decoration: underline !important;
+}
+
+.send-oil .icon-jiantou-copy2 {
+    top: 2.2rem !important;
+}
+
+/* 支付 e */
+
+/* 车辆管理 s */
+.setdpwd2 > li > label {
+    width: 7rem;
+}
+
+.setdpwd2 > li .form-control {
+    padding-left: 7.5rem;
+}
+
+.ommon-oil {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+}
+
+.car-num {
+    display: inline-block;
+    width: 45%;
+    padding-left: .8rem;
+    line-height: 1;
+    font-size: 1.4rem;
+    color: #555;
+    border: none;
+    border-left: 1px solid #ccc;;
+    background: none;
+}
+
+/* 车辆管理 e */
+
+.mask-inner-bottom{
+    display: none;
+    top: inherit;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 0;
+}
+.mask-inner-bottom.active {
+    display: block;
+    z-index: 99999;
+}
+
+/*绑定账号*/
+.list-unstyled.list-border > li:last-child {border-bottom: 1px solid #e5e5e5;}
+.list-unstyled.inpu-msg > li {border-bottom: none;margin-bottom: 0rem;}
+.topbar .wx-wrap {padding: .8rem 0;}
+.topbar .wx-wrap span {}
+.login-li .btn.disabled, .login-li .btn[disabled], .login-li .btn.disabled.active, .login-li .btn[disabled].active{border-color:#fff!important;background-color:#fff!important;color:#888!important;cursor:not-allowed;}
+.gh-desc {text-align: center;margin-top: 8rem;}
+.setdpwd>li>.group-item>.form-control {padding: 0!important;}
+#phoneCodeBtn {border-left: 1px solid rgba(255, 0, 0, 0)!important;}
+.form-group .right .btn {color: red!important;}
+.btn:active, .btn.active {-webkit-box-shadow:none;}
+
+/*我的账户*/
+.body {position: relative;}
+.bought-content {background-color: #FC3635;padding: 1rem 1.5rem;color: white;margin-bottom: 0;border-bottom: none;}
+.bought-content .bought-item {margin-top: 1rem;}
+/*.list-unstyled.list-border > .list-li {border-bottom: none;}*/
+.setdpwd > li i.jiantou-own{position: inherit;font-size: 1.2rem;right: 0;margin-top: -0.4rem;margin-left: 0.3rem;}
+.font-color {color: #000;}
+.list-li-con {margin: 0.5rem 0;}
+.every-oil {text-decoration: underline!important;font-size: 1.2rem;}
+.setdpwd > li > .w {width: inherit;}
+.fixed {width: 100%;position: fixed;left: 0;bottom: 0;border-radius: 0;margin-bottom: 0;z-index: 10;}
+.fixed>.btn {border-radius: 0;}
+.bought-item-left i.icon-wenhao {color: white;font-size: 1.6rem;margin-left: 0.2rem;}
+.setdpwd > li {border-bottom: 1px solid #ccc;}
+.setdpwd > li > .w i.icon-wenhao {font-size: 1.6rem;margin-left: 0.4rem;}
+
+/*产品详情页*/
+.details-wrap {position: fixed;width: 100%;height: 100%;background-color: rgba(0,0,0,.7);left: 0;bottom: 0;z-index: 11;}
+.details-footer {position: absolute;left: 0;bottom: 0;width: 100%;background-color: white;}
+.details-header {background-color: #E3E3E3;display: flex;padding: 1rem 0;}
+.details-header .details-title {flex: 1 0 90%;text-align: center;font-size: 1.5rem;}
+.details-header .details-close {flex: 0 0 10%;text-align: center;font-size: 1.5rem;}
+.details-content .list-unstyled{padding: 1rem;font-size: 1.3rem;}
+.details-content .list-unstyled:nth-child(2n+1) {border-bottom: 1px solid #ccc;}
+.details-content .list-two>li{display: flex;}
+.details-content .list-two>li>.jifen {flex: 0 0 22%;}
+.details-content .list-two>li>.jifen-desc {flex: 0 0 78%;}
