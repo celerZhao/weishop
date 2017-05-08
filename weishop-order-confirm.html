@@ -170,7 +170,7 @@
                      * value: "省id，市id"
                      * text: ["广东省","深圳市"]
                      */
-                    selectArea.init({trigger: '#area', data: "js/area_data.json", default: 0,value:"20,234", text:["广东省","深圳市"], position: "bottom", level: 2});
+                    selectArea.init({trigger: '#area', data: "js/data.json", default: 0,value:"20,234", text:["广东省","深圳市"], position: "bottom", level: 2});
 
                     /**
                      * 油品json
@@ -195,7 +195,10 @@
                         $("#liter").toggleClass("show_more")
                         $(this).find("i").toggleClass("icon-xiangxiafanye");
                     });
-
+                    // 选择产品期数
+                    $("#liter .inner").on("click", function () {
+                        $(this).addClass('active').parent().siblings().find('.inner').removeClass('active');
+                    });
                     // 加减数量
                     $(".num_minus").on("click",function(){
                         var _num = Number($("#buy_num").val());
