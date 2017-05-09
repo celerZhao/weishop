@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="css/global-mobile.css"/>
     <link rel="stylesheet" href="css/layout-mobile.css"/>
     <link rel="stylesheet" href="css/dialog.css"/>
+    <link rel="stylesheet" href="css/swiper/amazeui.swiper.min.css"/>
+
     <script>
         var cssEl = document.createElement('style');
         document.documentElement.firstElementChild.appendChild(cssEl);
@@ -37,7 +39,19 @@
         </ul>
     </div>-->
 
-    <div class="row"><img src="img/card_pic.jpg"></div>
+    <!--<div class="row"><img src="img/card_pic.jpg"></div>-->
+    <!-- banner 轮播-->
+    <div class="row text-center">
+        <div class="swiper-container swipercontainer-horizontal " id="card_pics">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="img/card_pic.jpg"></div>
+                <div class="swiper-slide"><img src="img/card_pic.jpg"></div>
+                <div class="swiper-slide"><img src="img/card_pic.jpg"></div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+
     <div class="row card-name pt-10">
         <div class="clear">
             <div class=" pull-left">
@@ -299,7 +313,22 @@
         </div>
 
     </div>
-
+    <style>
+        .share-fixed{
+            position:fixed;
+            right:0.2rem;
+            bottom:15rem;
+            width:2.5rem;
+            height:2.5rem;
+            vertical-align:middle;
+            background:#fff;
+            border:1px solid #ccc;
+            border-radius:2rem;
+        }
+    </style>
+    <div class="share-fixed fs-12 text-gray hidden">
+        <div class="text-center"><a href="javascript:;"><i class="icon iconfont icon-fenxiang1"></i></a></div>
+    </div>
     <a id="fixedBtn" class="radius0 btn btn-danger btn-danger2 btn-fixed" href="weishop-order-confirm.html">立即购买</a>
 
 
@@ -309,6 +338,8 @@
 <script src="js/bOilPlugIn/bOilPlugIn.js"></script>
 <script src="js/lib/dialog.js"></script>
 <script src="js/lib/mobile-select-area.js"></script>
+<script src="js/swiper/amazeui.swiper.min.js"></script>
+
 <script>
     var bOilApp = new bOilPlugIn(),
             App = {
@@ -316,6 +347,20 @@
                 isHaspwd: 0,
 
                 init: function () {
+                    // 图片轮播
+//                    $("#card_pics")
+                    $('#card_pics').swiper({
+                        pagination: '#card_pics .swiper-pagination',
+                        nextButton: '#card_pics .swiper-button-next',
+                        prevButton: '#card_pics .swiper-button-prev',
+                        paginationClickable: true,
+                        spaceBetween: 30,
+                        centeredSlides: true,
+                        autoplay: 2500,
+                        loop: true,
+                        autoplayDisableOnInteraction: false
+                    });
+
                     // 地区选择
                     var selectArea = new MobileSelectArea();
                     /**
@@ -379,6 +424,14 @@
                                 $('#nav a').removeClass("active"); //清除active类
                                 $("#nav a:nth-child("+Number(i+1)+")").addClass("active");	//给当前导航加active类
                             }
+
+                        }
+
+                        if($("#nav-a-1").offset().top<=scrollTop+280){
+                            debugger
+                            $(".share-fixed").removeClass("hidden")
+                        }else{
+                            $(".share-fixed").addClass("hidden")
                         }
 
                     });
