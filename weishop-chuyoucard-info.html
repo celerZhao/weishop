@@ -65,23 +65,24 @@
         <span class="text-danger hot-product fs-10">获赠油箱</span><span class="pl-10">暂无油箱抵扣</span>
     </div>
 
-    <ul class="row list-unstyled list-p5 list-border setdpwd mt-10">
+    <ul class="row list-unstyled list-p5 list-border setdpwd mt-10 ">
         <li>
             <label>选择地区</label>
             <a class="form-group mb-0 block" href="javascript:;">
-                <input id="area" class="form-control pr-15 text-black text-right bg-white" readonly data-value="2,234" value="广东省/深圳市" />
+                <input id="area" type="text" class="form-control pr-15 text-black text-right bg-white" readonly data-value="2,234" value="广东省/深圳市" />
             </a>
             <i class="iconfont icon-jiantou-copy2"></i>
         </li>
         <li>
             <label>选择油品</label>
             <a class="form-group mb-0 block" href="javascript:;">
-                <input id="oilType" class="form-control pr-15 text-black text-right bg-white" readonly="" value="国V汽油92#">
+                <input id="oilType" type="text" class="form-control pr-15 text-black text-right bg-white" readonly="" value="国V汽油92#">
             </a>
             <i class="iconfont icon-jiantou-copy2"></i>
         </li>
     </ul>
     <div class="border-bottom-line"></div>
+
     <ul class="row list-unstyled list-p5 setdpwd">
         <li>
             <label>选择升数</label>
@@ -108,16 +109,16 @@
         <div class="fs-10">广东/深圳市参考油价：<span>6.47</span>(元/升)</div>
     </div>
 
-    <ul class="row list-unstyled list-p5 setdpwd">
+    <ul class="row list-unstyled list-p10 setdpwd">
         <li>
             <label>购买数量</label>
-                <div class=" text-right">
-                    <div class="clear num_add_minus text-center">
-                        <a href="javascript:;" class="pull-left num_minus">-</a>
-                        <input id="buy_num" class=" pull-left" type="tel" value="1" maxlength="2"/>
-                        <a href="javascript:;" class="pull-left num_add">+</a>
-                    </div>
+            <div class=" text-right">
+                <div class="clear text-center num_add_minus">
+                    <a href="javascript:;" class="pull-left num_minus">-</a>
+                    <input id="buy_num" class="pull-left" type="tel" value="1" maxlength="2"/>
+                    <a href="javascript:;" class="pull-left num_add">+</a>
                 </div>
+            </div>
         </li>
     </ul>
 
@@ -299,7 +300,7 @@
 
     </div>
 
-    <a id="fixedBtn" class="btn btn-danger btn-danger2 btn-fixed" href="javascript:;">立即购买</a>
+    <a id="fixedBtn" class="btn btn-danger btn-danger2 btn-fixed" href="weishop-order-confirm.html">立即购买</a>
 
 
 </div>
