@@ -282,35 +282,43 @@ a.bg-warning:active {
 }
 
 .num_add_minus {
-    display: inline-block;
-    margin-top: .5rem;
+    float: right;
+    position: relative;
+    width: 10rem;
+    height: 2.6rem;
+    line-height: 2.4rem;
+    border: .1rem solid #ccc;
 }
 
 .num_add_minus a {
-    display: inline-block;
+    position: absolute;
+    top: 0;
+    display: block;
     width: 2.4rem;
     height: 2.4rem;
-    line-height: 2.2rem;
-    margin: 0;
     color: #999;
     background: #f5f5f5;
-    border: 0.1rem solid #ccc
 }
 
-.num_add_minus .num_minus {;
+.num_add_minus a.num_minus {
+    left: 0;
+    border-right: 0.1rem solid #ccc;
+}
+
+.num_add_minus a.num_add {
+    right: 0;
+    border-left: 0.1rem solid #ccc;
 }
 
 .num_add_minus input {
+    position: absolute;
+    left: 2.4rem;
+    width: 5rem;
     height: 2.4rem;
     padding: 0;
-    line-height: 1;
     border: none;
-    border-top: 0.1rem solid #ccc;
-    border-bottom: 0.1rem solid #ccc;
     font-size: 1.4rem;
-    width: 4rem;
     text-align: center;
-    vertical-align: middle;
 }
 
 .quan-title {
@@ -373,29 +381,29 @@ a.bg-warning:active {
 
 .flex-1 {
     padding: 0 0.4rem;
-    -webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */
-    -moz-box-flex: 1;         /* OLD - Firefox 19- */
-    -webkit-flex: 1;          /* Chrome */
-    -ms-flex: 1;              /* IE 10 */
-    flex: 1;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    -webkit-box-flex: 1; /* OLD - iOS 6-, Safari 3.1-6 */
+    -moz-box-flex: 1; /* OLD - Firefox 19- */
+    -webkit-flex: 1; /* Chrome */
+    -ms-flex: 1; /* IE 10 */
+    flex: 1; /* NEW, Spec - Opera 12.1, Firefox 20+ */
 }
 
 .flex-2 {
     padding: 0 0.4rem;
-    -webkit-box-flex: 2;      /* OLD - iOS 6-, Safari 3.1-6 */
-    -moz-box-flex: 2;         /* OLD - Firefox 19- */
-    -webkit-flex: 2;          /* Chrome */
-    -ms-flex: 2;              /* IE 10 */
-    flex: 2;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    -webkit-box-flex: 2; /* OLD - iOS 6-, Safari 3.1-6 */
+    -moz-box-flex: 2; /* OLD - Firefox 19- */
+    -webkit-flex: 2; /* Chrome */
+    -ms-flex: 2; /* IE 10 */
+    flex: 2; /* NEW, Spec - Opera 12.1, Firefox 20+ */
 }
 
 .flex-3 {
     padding: 0 0.4rem;
-    -webkit-box-flex: 3;      /* OLD - iOS 6-, Safari 3.1-6 */
-    -moz-box-flex: 3;         /* OLD - Firefox 19- */
-    -webkit-flex: 3;          /* Chrome */
-    -ms-flex: 3;              /* IE 10 */
-    flex: 3;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    -webkit-box-flex: 3; /* OLD - iOS 6-, Safari 3.1-6 */
+    -moz-box-flex: 3; /* OLD - Firefox 19- */
+    -webkit-flex: 3; /* Chrome */
+    -ms-flex: 3; /* IE 10 */
+    flex: 3; /* NEW, Spec - Opera 12.1, Firefox 20+ */
 }
 
 .img-beishu img {
@@ -884,12 +892,14 @@ a.bg-warning:active {
 .bought-content .bought-item {
     margin-top: 1rem;
 }
+
 .bought-content .bought-item .oil-num {
-  font-size: 1.9rem;
+    font-size: 1.9rem;
 }
+
 .bought-content .bought-item .bought-item-right {
-  margin-right: 0.5rem;
-  font-size: 1.22rem;
+    margin-right: 0.5rem;
+    font-size: 1.22rem;
 }
 
 .setdpwd > li i.jiantou-own {
