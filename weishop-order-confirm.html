@@ -42,9 +42,9 @@
             <div class="flex-1">
                 <img src="img/tuijian_03.jpg" alt=""/>
             </div>
-            <div class="flex-2">
+            <div class="flex-3">
                 <div class="">大众加油卡</div>
-                <div class="fs-12 text-gray">按升储油，锁定油价，不必担心油价波动</div>
+                <div class="fs-10 text-gray">按升储油，锁定油价，不必担心油价波动</div>
                 <div class="text-danger"><span class="fs-12">¥</span><span class="fs-24">1,288</span>.<span class="fs-12">00</span></div>
             </div>
         </div>
@@ -61,21 +61,21 @@
         <li>
             <label>选择油品</label>
             <a class="form-group mb-0 block" href="javascript:;">
-                <input id="oilType" class="form-control pr-15 text-black text-right bg-white" readonly="" value="V汽油92#">
+                <input id="oilType" class="oil_input form-control pr-15 text-black text-right bg-white" readonly="" value="V汽油92#">
             </a>
             <i class="iconfont icon-jiantou-copy2"></i>
         </li>
     </ul>
-  <div class="border-bottom-line"></div>
+    <div class="border-bottom-line"></div>
     <ul class="row list-unstyled list-p5 setdpwd">
         <li>
-            <label>选择升数</label>
-            <a href="javascript:;" class="pull-right" id="view_more_liter"><i class="iconfont icon-xiangshangfanye "></i></a>
+            <label>选择升数</label> <span class="fs-10 text-gray ml-30 pl-30 pt-10">（赠送：<span class="text-danger">4.00升</span> 价值：<span class="text-danger">25.88元</span>）</span>
+           <!-- <a href="javascript:;" class="pull-right" id="view_more_liter"><i class="iconfont icon-xiangshangfanye "></i></a>-->
         </li>
     </ul>
     <div id="liter" class="bg_fff fluid-model text-center row pt-10 card-container border-bottom-line">
         <div class="col-xs-4">
-            <span class="inner active" _val="200">200升</span>
+            <span class="inner" _val="200">200升</span>
         </div>
         <div class="col-xs-4">
             <span class="inner" _val="350">350升</span>
@@ -88,16 +88,17 @@
         </div>
     </div>
 
-    <ul class="row list-unstyled list-p5 setdpwd">
+    <ul class="row list-unstyled list-p10 setdpwd">
         <li>
             <label>购买数量</label>
-                <div class=" text-right">
-                    <div class="clear num_add_minus text-center">
-                        <a href="javascript:;" class="pull-left num_minus">-</a>
-                        <input id="buy_num" class=" pull-left" type="tel" value="1" maxlength="2"/>
-                        <a href="javascript:;" class="pull-left num_add">+</a>
-                    </div>
+            <label>购买数量</label>
+            <div class=" text-right">
+                <div class="clear text-center num_add_minus">
+                    <a href="javascript:;" class="pull-left num_minus">-</a>
+                    <input id="buy_num" class="pull-left" type="tel" value="1" maxlength="2"/>
+                    <a href="javascript:;" class="pull-left num_add">+</a>
                 </div>
+            </div>
         </li>
     </ul>
 
@@ -106,7 +107,7 @@
         <li>
             <label>兑付说明</label>
             <a id="view-duifu" class="form-group mb-0 block" href="javascript:;">
-                <input class="form-control pr-15 text-black text-right bg-white" readonly="" value="">
+                <input class="form-control pr-15  text-right bg-white"  readonly="" value="4期，2017年05月05日开放兑付">
             </a>
             <i class="iconfont icon-jiantou-copy2"></i>
         </li>
@@ -124,54 +125,77 @@
             </a>
             <i class="iconfont icon-jiantou-copy2"></i>
         </li>
+        <li>
+            <label>使用现金券</label>
+            <a class="form-group mb-0 block" href="javascript:;">
+                <input id="" class="form-control pr-15 text-danger text-right bg-white" readonly="" value="-10">
+            </a>
+            <i class="iconfont icon-jiantou-copy2"></i>
+        </li>
     </ul>
     <div class="border-bottom-line"></div>
-    <ul class="row list-unstyled list-p5 setdpwd">
+    <ul class="row list-unstyled list-p5 setdpwd mb-30">
         <li class="relative">
             <label>油箱抵扣 <span class="ico-info">i</span></label>
             <a class="form-group mb-0 block mr-30 re" href="javascript:;">
-                <input id="oil-off" class="form-control pr-30  text-danger text-right bg-white" readonly=""  value="">
-                <a class="radio-a active" href="javascript:;"><i class="radio-i "></i></a>
+                <input id="oil-off" class="form-control pr-30  bg-white" readonly=""  value="暂无可抵扣金额">
+                <a id="deduct" class="radio-a" href="javascript:;"><i class="radio-i "></i></a>
             </a>
 
+        </li>
+        <li class="relative">
+            <label>油箱抵扣 <span class="ico-info">i</span></label> <span class="fs-10 text-gray ml-30 pl-30 pt-10">&nbsp;&nbsp;&nbsp; 油箱可抵扣现金 <span class="text-danger">6.7元</span></span>
+            <a class="form-group mb-0 block mr-30 re" href="javascript:;">
+                <a class="radio-a active" href="javascript:;"><i class="radio-i "></i></a>
+            </a>
         </li>
     </ul>
 
 
     <!--<a id="fixedBtn" class="btn btn-danger btn-danger2 btn-fixed" href="javascript:;">立即购买</a>-->
-    <div class="row bg-white mt-30">
-        <div class="display-flex">
-            <div class="flex-2 text-right pt-15">
-                合计：<span class="text-danger fs-10">¥</span><span class="text-danger">12,800</span><span class="text-danger fs-10">.00</span>
-            </div>
-            <div class="flex-1 pr-0">
-                <div class="bg-danger2 text-white fs-16 text-center pt-10 pb-10 ">提交订单</div>
-            </div>
+    <div class="row bg-white mt-30 fixed-bottom" >
+        <div class="col-xs-8 text-right pt-15">
+            合计：<span class="text-danger fs-10">¥</span><span class="text-danger">12,800</span><span class="text-danger fs-10">.00</span>
+        </div>
+        <div class="col-xs-4 bg-danger2 mr-0">
+            <a class=" text-white fs-16 text-center pt-10 pb-10" href="order-pay-confirm.html">提交订单</a>
         </div>
     </div>
 
 </div>
+<style>
+    .mask-inner .title{
+        background:#e3e3e3;
+    }
+    .mask-inner .icon-btn{
+        color:#a2a2a2 !important;
+    }
+</style>
 
 <script src="js/lib/jquery-1.11.3.min.js"></script>
 <script src="js/bOilPlugIn/bOilPlugIn.js"></script>
 <script src="js/lib/dialog.js"></script>
 <script src="js/lib/mobile-select-area.js"></script>
+<script src="js/lib/js.cookie.js"></script>
 <script>
     var bOilApp = new bOilPlugIn(),
+            selectArea = new MobileSelectArea(),
+            selectOil = new MobileSelectArea(),
             App = {
                 status: 0,   // 0 前端开发，1 后端开发
-                isHaspwd: 0,
+                hascarInfo: 0,  // 0 未填写车辆信息 1 已填写车辆信息
+                orderObj:{},    // 订单obj
+
 
                 init: function () {
+
                     // 地区选择
-                    var selectArea = new MobileSelectArea();
                     /**
                      * 初始化 地区选择
                      * value: "省id，市id"
                      * text: ["广东省","深圳市"]
                      */
-                    selectArea.init({trigger: '#area', data: "js/data.json", default: 0,value:"20,234", text:["广东省","深圳市"], position: "bottom", level: 2});
-
+                    selectArea.init({trigger: '#area', data: "js/data.json", default: 0,value:"2,234", text:["广东省","深圳市"], position: "bottom", level: 2,callback:App.area_callback});
                     /**
                      * 油品json
                      * @type {*[]}
@@ -187,14 +211,15 @@
                         "id": "4",
                         "name": "国V柴油0#"
                     }];
-                    var selectArea1 = new MobileSelectArea();
-                    selectArea1.init({trigger: '#oilType', data: json, default: 0, value:'2',text:["国V汽油92#"], position: "bottom", level: 1});
+
+                    // 根据地区，后台获取油品 json ，选中展示 cookie中的油品
+                    selectOil.init({trigger: '#oilType', data: json, default: 0, value:'2',text:["国V汽油92#"], position: "bottom", level: 1,callback:App.oil_callback});
 
                     // 展开 购买产品期数
-                    $("#view_more_liter").on("click",function(){
+              /*      $("#view_more_liter").on("click",function(){
                         $("#liter").toggleClass("show_more")
                         $(this).find("i").toggleClass("icon-xiangxiafanye");
-                    });
+                    });*/
                     // 选择产品期数
                     $("#liter .inner").on("click", function () {
                         $(this).addClass('active').parent().siblings().find('.inner').removeClass('active');
@@ -213,18 +238,42 @@
                         $("#buy_num").val(new_num);
                     })
 
-                    // radio 开关
-                    $(".radio-a").on("click",function(){
-                        $(this).toggleClass("active");
+                    // radio 开关 油箱抵扣
+                    $("#deduct").on("click",function(){
+                        if(App.hascarInfo){
+                            $(this).toggleClass("active");
+                        }else{ // 跳转到车主身份页面
+                            var tip_html = '<ul class="text-default fs-14"><li>车主身份认证后才能抵扣获赠油箱</li>'
+                                            +'<li>认证后便于评估您的爱车油耗</li>'
+                                            +'<li>认证后便于开通更多车主服务功能</li>'
+                                            +'</ul>'
+                                            +'<p class="mt-10 fs-14">想使用获赠油箱，立即进行车主身份确认</p>';
+                            bOilApp.tips({
+                                title: '提示',
+                                closeId: 'tipsCloseBtn',
+                                btnNums: 1,
+                                content: tip_html,
+                                btn: {
+                                    btnSure: {
+                                        text: '立即填写',
+                                        href: 'car-manage.html',
+                                        btnStyle:"background-color: #f00; color: #fff;"
+                                    }
+                                },
+                                fixedHeight: false,
+                                alone: true
+                            });
+
+                        }
                     })
 
                     // 底部弹框
                     //通用弹层--不带按钮自适应高度提示框
-                    var _duifu = '<table class="table  text-center fs-12" >'
-                            +'<tbody>'
-                            +'<tr class="bg-default">'
-                            +'<td>兑付日</td>'
-                            +'<td>兑付数量</td>'
+                    var _duifu = '<div style="height:15rem;overflow-y:scroll;"><table class="table  text-center fs-12" >'
+                            +'<tbody >'
+                            +'<tr>'
+                            +'<td class="border-no">兑付日</td>'
+                            +'<td class="border-no">兑付数量</td>'
                             +'</tr>'
                             +'<tr>'
                             +'<td>2017年05月04日</td>'
@@ -242,20 +291,72 @@
                             +'<td>2017年05月04日</td>'
                             +'<td>50.00升</td>'
                             +'</tr>'
+                            +'<tr >'
+                            +'<td>2017年05月04日</td>'
+                            +'<td>50.00升</td>'
+                            +'</tr>'
+                            +'<tr >'
+                            +'<td>2017年05月04日</td>'
+                            +'<td>50.00升</td>'
+                            +'</tr>'
+                            +'<tr >'
+                            +'<td>2017年05月04日</td>'
+                            +'<td>1150.00升</td>'
+                            +'</tr>'
+                            +'<tr >'
+                            +'<td>2017年05月04日</td>'
+                            +'<td>1150.00升</td>'
+                            +'</tr>'
+                            +'<tr >'
+                            +'<td>2017年05月04日</td>'
+                            +'<td>1150.00升</td>'
+                            +'</tr>'
                             +'</tbody>'
-                            +'</table>';
-                    $('#view-duifu').on('click', function () {
+                            +'</table></div>'
+                            +'<div><span class="text-danger fs-10">注：此为每张卡每期可兑付数量说明</span>'
+                            +'</div>';
+                    $('#view-duifu').parent().on('click', function () {
                         bOilApp.tips({
                             title: '兑付说明',
                             closeId: 'tipsCloseBtn',
                             content: _duifu,
                             alone: true,
-                            bottom:true    // 底部显示
+                            bottom:true,    // 底部显示
                         });
                     });
 
-                }
+                },
+                // 地区切换  更换油品
+                area_callback:function(){
 
+                    var json2 = [{
+                        "id": "2",
+                        "name": "国VI汽油92#"
+                    }, {
+                        "id": "3",
+                        "name": "国VI汽油97#"
+                    }, {
+                        "id": "4",
+                        "name": "国VI柴油0#"
+                    }];
+
+                    var _oilType_El =  $("#oilType").clone();
+                    $("#oilType").hide();
+                    $("#oilType").after(_oilType_El);
+                    $(".oil_input")[0].remove()
+                    $("#oilType").val(json2[0].name);
+                    $("#oilType").attr("data-value",json2[0].id);
+
+                    setTimeout(function(){
+                        selectOil.init({trigger: '#oilType', data: json2, default: 0, value:'2',text:["国VI汽油92#"], position: "bottom", level: 1,callback:App.oil_callback});
+                    },100)
+
+
+                },
+                // 油品切换
+                oil_callback:function(){
+
+                }
             };
 
     $(function () {

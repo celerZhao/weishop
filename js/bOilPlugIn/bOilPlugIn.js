@@ -84,7 +84,16 @@ bOilPlugIn.prototype = {
         'oilCard',
 
         //重复油卡号码
-        'reOilCard'
+        'reOilCard',
+
+        //车牌号
+        'carNumber',
+
+        //品牌型号
+        'brandModel',
+
+        //汽车排量
+        'outputVolume'
     ],
 
     //校验的正则及对应提示语
@@ -219,6 +228,27 @@ bOilPlugIn.prototype = {
             reg: /^(1\d{18}|9\d{15})$/,
             empty: '请重复油卡号码',
             tips: '两次油卡号码不一致'
+        },
+
+        //车牌
+        carNumber: {
+            reg: /^[a-zA-Z]{1}[a-zA-Z_0-9]{5,6}$/,
+            empty: '车牌号不能为空',
+            tips: '请输入正确的车牌号'
+        },
+
+        //品牌型号
+        brandModel: {
+            reg: /^[\u4E00-\u9FA5A-Za-z0-9_]{35}$/,
+            empty: '品牌型号不能为空',
+            tips: '品牌型号最多35个字符'
+        },
+
+        //排量
+        outputVolume: {
+            reg: /^0{1}([.]\d{1,2})?$|^[1-9]\d*([.]{1}[0-9]{1,2})?$/,
+            empty: '请输入排量',
+            tips: '排量格式不正确'
         }
     },
 
@@ -565,7 +595,7 @@ bOilPlugIn.prototype = {
             //确定按钮是否带回调函数
             refreshVSbtncb();
 
-            btnHtml = '<div class="btnCont"><a id="btnSure" class="btn btn-danger" href="' + o.btn.btnSure.href + '">' + o.btn.btnSure.text + '</a></div>';
+            btnHtml = '<div class="btnCont"><a id="btnSure" class="btn btn-danger" style="'+ o.btn.btnSure.btnStyle+'" href="' + o.btn.btnSure.href + '">' + o.btn.btnSure.text + '</a></div>';
         } else if (o.btnNums === 2) {
             //确定按钮是否带回调函数
             refreshVSbtncb();

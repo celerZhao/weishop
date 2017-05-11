@@ -128,7 +128,7 @@ a.bg-warning:active {
     display: block;
     margin: 0 .5rem;
     padding: .5rem 0;;
-    border: .1rem solid #bbbbbb;
+    border: .1rem solid #dddddd;
     border-radius: .3rem;
 }
 
@@ -141,6 +141,14 @@ a.bg-warning:active {
 /* 弹窗标题颜色 */
 .mask-inner .title {
     color: #333 !important;
+}
+/* 弹框背景颜色 */
+.mask-inner .title{
+    background:#e3e3e3;
+}
+/* 弹窗关闭按钮颜色 */
+.mask-inner .icon-btn{
+    color:#a2a2a2 !important;
 }
 
 /* 弹窗底部确定按钮 */
@@ -266,6 +274,8 @@ a.bg-warning:active {
     border: 1px solid red;
     line-height: 1.3rem;
     border-radius: 3px;
+    position:relative;
+    top:-0.2rem;
 }
 
 .border-bottom-line {
@@ -325,7 +335,6 @@ a.bg-warning:active {
     margin: 0 -1.5rem;
     padding: .8rem 1.5rem;
     color: #a5a5a5;
-    background-color: #fafafa;
 }
 
 .quan {
@@ -377,6 +386,7 @@ a.bg-warning:active {
 
 .display-flex {
     display: flex;
+
 }
 
 .flex-1 {
@@ -404,6 +414,12 @@ a.bg-warning:active {
     -webkit-flex: 3; /* Chrome */
     -ms-flex: 3; /* IE 10 */
     flex: 3; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+.fixed-bottom{
+    position: fixed;
+    bottom:0;
+    width:100%;
+    z-index: 100;
 }
 
 .img-beishu img {
@@ -482,18 +498,45 @@ a.bg-warning:active {
 }
 
 .radio-a .radio-i {
-    border: 0.1rem solid #ccc;
+    border: 0.05rem solid #ccc;
     border-radius: 2rem;
-    width: 1.9rem;
-    height: 1.8rem;
+    width: 1.6rem;
+    height: 1.6rem;
+    margin: 0.12rem 0.1rem ;
 }
 
 .radio-a.active {
     text-align: right;
+    background:#fc3635;
 }
 
 .radio-a.active .radio-i {
-    background: #fc3635;
+    background: #ffffff;
+    margin-right: 0.1rem ;
+}
+/*==分享==*/
+.share-fixed{
+    position:fixed;
+    right:1rem;
+    bottom:15rem;
+    width:4rem;
+    height:4rem;
+    vertical-align:middle;
+}
+/*==置顶==*/
+.to-top{
+    position:fixed;
+    right:1rem;
+    bottom:8rem;
+    width:4rem;
+    height:4rem;
+    vertical-align:middle;
+    background:#fff;
+    border-radius:2rem;
+    border:1px solid #ccc;
+}
+.to-top img{
+    width:1.8rem;
 }
 
 /*====大众储油卡 end====*/
@@ -817,6 +860,15 @@ a.bg-warning:active {
     border: none;
     border-left: 1px solid #ccc;;
     background: none;
+    text-transform:uppercase;
+}
+
+.car-displacement{
+    position: absolute;
+    top: 50%;
+    right: 1.5rem;
+    margin-top: -1rem;
+    height: 2.4rem;
 }
 
 /* 车辆管理 e */
@@ -961,6 +1013,9 @@ a.bg-warning:active {
     left: 0;
     bottom: 0;
     z-index: 11;
+    right: 0;
+    margin: 0 auto;
+    max-width: 640px;
 }
 
 .details-footer {
@@ -972,8 +1027,10 @@ a.bg-warning:active {
 }
 
 .details-header {
-    background-color: #E3E3E3;
+    background-color: #fc3635;
     display: flex;
+    -webkit-display: flex;
+    color: white;
     padding: 1rem 0;
 }
 
@@ -981,12 +1038,13 @@ a.bg-warning:active {
     flex: 1 0 90%;
     text-align: center;
     font-size: 1.5rem;
+    padding-left: 1.5rem;
 }
 
 .details-header .details-close {
     flex: 0 0 10%;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
 }
 
 .details-content .list-unstyled {
@@ -1008,4 +1066,108 @@ a.bg-warning:active {
 
 .details-content .list-two > li > .jifen-desc {
     flex: 0 0 78%;
+}
+
+/*全部评价*/
+.pj-eval {border-radius: 0;}
+.wrap-pj {
+  background-color: white!important;
+  display: flex;
+  -webkit-display: flex;
+  justify-content: space-between;
+}
+.wrap-pj .text-pj {
+  color: #666!important;
+  padding: 0.1rem 0.5rem;
+  font-size: 1.2rem!important;
+  flex: 0 0 auto;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 3rem;
+  background-color: #FFE6E7;
+}
+.pj-list {
+  padding: 0 -1.5rem;
+}
+.pj-list .pingjia {
+  padding: 1.5rem;
+}
+.pj-tent {
+  margin-bottom: 0!important;
+  padding-top: 4.8rem;
+}
+.fixed-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 101;
+  margin-left: 0;
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/*发布*/
+.issue .pingjia-title {
+  display: flex;
+  -webkit-display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.issue .pingjia-title .chuyoucard {
+  border-radius: 0.6rem;
+  width: 26%;
+  height: 24%;
+}
+.issue .list-unstyled .first {
+  border-bottom: 1px solid #e8e8e8;
+}
+.tex-area {
+  width: 100%;
+  resize: none;
+  outline: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #000;
+}
+.issue .good {
+  flex: 0 0 18%;
+  text-align: right;
+}
+.issue .star {
+  display: flex;
+  -webkit-display: flex;
+}
+.issue .text-pj {
+  background-color: #F5F5F5;
+  color: #B1B1B1!important;
+  padding: 0 1rem;
+}
+.issue .text-pj.active {
+  background-color: #FC3635;
+  color: white!important;
+}
+.issue .pingjia {
+  position: relative;
+}
+.top-line:before {
+  content: " ";
+  width: 90%;
+  height: 1px;
+  background-color: #e8e8e8;
+  position: absolute;
+  top: 0;
+  left: 5%;
+}
+
+.icon-jiantou-copy2:before{
+    content: '\e688';
+}
+.rotate-90{
+    transform:rotate(90deg);
+    -ms-transform:rotate(90deg); 	/* IE 9 */
+    -moz-transform:rotate(90deg); 	/* Firefox */
+    -webkit-transform:rotate(90deg); /* Safari 和 Chrome */
+    -o-transform:rotate(90deg); 	/* Opera */
 }
