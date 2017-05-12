@@ -239,7 +239,7 @@ bOilPlugIn.prototype = {
 
         //品牌型号
         brandModel: {
-            reg: /^[\u4E00-\u9FA5A-Za-z0-9_]{35}$/,
+            reg: /^[\u4E00-\u9FA5A-Za-z0-9_]{1,35}$/,
             empty: '品牌型号不能为空',
             tips: '品牌型号最多35个字符'
         },

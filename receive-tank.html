@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no,email=no" />
+    <meta name="ML-Config" content="fullscreen=yes,preventMove=no" />
+    <meta name="viewport"
+         content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>微商城-获赠邮箱</title>
+    <link rel="stylesheet" href="css/global-mobile.css" />
+    <link rel="stylesheet" href="css/layout-mobile.css" />
+    <script>
+    var cssEl = document.createElement('style');
+    document.documentElement.firstElementChild.appendChild(cssEl);
+    function setPxPerRem() {
+        var dpr = 1;
+        var pxPerRem = document.documentElement.clientWidth * dpr / 32;
+        if (pxPerRem < 10) pxPerRem = 10;
+        if (pxPerRem > 20) pxPerRem = 20;
+        cssEl.innerHTML = 'html{font-size:' + pxPerRem + 'px!important;}';
+    }
+    setPxPerRem();
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="row bg-white bg-none text-center">
+            <div class="pay-suc mb-20"><img src="img/icon-tank.png"></div>
+            <p>油量(升)<i id="layerNoBtn" class="icon iconfont fs-12 ml-5">&#xe67f;</i></p>
+            <p class="text-black bold fs-24">0.00</p>
+            <p>可抵金额(元) <span class="ml-5">+0.00</span></p>
+        </div>
+        <div class="row mt-15 clear">
+            <div class="col-xs-12">
+                <a class="btn btn-gray" href="javascript:;">去使用</a><!-- 注：有油量时激活状态btn-gray样式换成btn-orange -->
+                <a class="block mt-10 text-primary text-center" href="javascript:;">每天送你一升油&gt;</a>
+            </div>
+        </div>
+    </div>
+
+    <a id="fixedBtn" class="block text-primary text-center btn-fixed fs-14" href="javascript:;">什么是获赠邮箱？</a>
+
+    <script src="js/lib/jquery-1.11.3.min.js"></script>
+    <script src="js/bOilPlugIn/bOilPlugIn.js"></script>
+    <script>
+    var bOilApp = new bOilPlugIn(),
+        App = {
+        //是否后端开发状态(0前端，1后端)
+        status: 0,
+
+        init: function() {
+            //油量
+            $('#layerNoBtn').on('click', function () {
+                bOilApp.tips({
+                    title: '油量说明',
+                    closeId: 'tipsCloseBtn',
+                    content: '<div>油量会根据广东深圳市92号汽油xxxxxxxxx，油量会根据广东深圳市92号汽油xxxxxxxxx。</div>',
+                    alone: true
+                });
+            });
+        }
+    };
+    $(function() {
+        App.init();
+    });
+    </script>
+</body>
+</html>

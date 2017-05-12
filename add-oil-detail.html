@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no,email=no" />
+    <meta name="ML-Config" content="fullscreen=yes,preventMove=no" />
+    <meta name="viewport"
+         content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>微商城-加油明细</title>
+    <link rel="stylesheet" href="css/global-mobile.css" />
+    <link rel="stylesheet" href="css/layout-mobile.css" />
+    <script>
+    var cssEl = document.createElement('style');
+    document.documentElement.firstElementChild.appendChild(cssEl);
+    function setPxPerRem() {
+        var dpr = 1;
+        var pxPerRem = document.documentElement.clientWidth * dpr / 32;
+        if (pxPerRem < 10) pxPerRem = 10;
+        if (pxPerRem > 20) pxPerRem = 20;
+        cssEl.innerHTML = 'html{font-size:' + pxPerRem + 'px!important;}';
+    }
+    setPxPerRem();
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="row bg-white text-center mb-15 add-oil-tab">
+            <div class="col-xs-6"><a href="#addOil">加油</a></div>
+            <div class="col-xs-6"><a href="#buyOilCard">购买加油卡</a></div>
+        </div>
+        <div class="row add-oil">
+            <ul id="addOil" class="list-unstyled">
+                <li class="mb-15">
+                    <div class="pt-10 pr-15 pb-10 pl-15 text-gray order-num">订单号:1705021517200026</div>
+                    <div class="pt-10 pr-15 pl-15">
+                        <p class="text-right text-gray"><span class="left text-black">交易单号</span>170109135175084</p>
+                        <p class="text-right text-gray"><span class="left text-black">加油总金额</span>0.10元</p>
+                        <p class="text-right text-gray"><span class="left text-black">实付金额</span>0.05元</p>
+                        <p class="text-right text-gray"><span class="left text-black">油品</span>IV汽油90#</p>
+                        <p class="text-right text-gray"><span class="left text-black">加油站</span>12345IK4PfGM6</p>
+                    </div>
+                </li>
+                <li class="mb-15">
+                    <div class="pt-10 pr-15 pb-10 pl-15 text-gray order-num">订单号:1705021517200026</div>
+                    <div class="pt-10 pr-15 pl-15">
+                        <p class="text-right text-gray"><span class="left text-black">交易单号</span>170109135175084</p>
+                        <p class="text-right text-gray"><span class="left text-black">加油总金额</span>0.10元</p>
+                        <p class="text-right text-gray"><span class="left text-black">实付金额</span>0.05元</p>
+                        <p class="text-right text-gray"><span class="left text-black">油品</span>IV汽油90#</p>
+                        <p class="text-right text-gray"><span class="left text-black">加油站</span>12345IK4PfGM6</p>
+                    </div>
+                </li>
+            </ul>
+            <ul id="buyOilCard" class="list-unstyled">
+                <li class="mb-15">
+                    <div class="pt-10 pr-15 pb-10 pl-15 text-gray order-num">订单号:1705021517200026</div>
+                    <div class="pt-10 pr-15 pl-15">
+                        <p class="text-right text-gray"><span class="left text-black">交易单号</span>170109135175084</p>
+                        <p class="text-right text-gray"><span class="left text-black">加油总金额</span>0.10元</p>
+                        <p class="text-right text-gray"><span class="left text-black">实付金额</span>0.05元</p>
+                        <p class="text-right text-gray"><span class="left text-black">油品</span>IV汽油90#</p>
+                        <p class="text-right text-gray"><span class="left text-black">加油站</span>12345IK4PfGM6</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <script src="js/lib/jquery-1.11.3.min.js"></script>
+    <script src="js/bOilPlugIn/bOilPlugIn.js"></script>
+    <script>
+    var bOilApp = new bOilPlugIn(),
+        App = {
+        //是否后端开发状态(0前端，1后端)
+        status: 0,
+
+        init: function() {
+
+            //tab切换
+            var tab = $(".add-oil > ul"),
+                tabCons = $(".add-oil-tab div");
+
+            tab.hide();
+            tabCons.first().addClass("active").show();
+            tab.first().show();
+
+            tabCons.on('click', function() {
+                tabCons.removeClass("active");
+                $(this).addClass("active");
+                tab.hide();
+                var activeTab = $(this).find("a").attr("href");
+                $(activeTab).show();
+                return false;
+            });
+
+        }
+    };
+    $(function() {
+        App.init();
+    });
+    </script>
+</body>
+</html>

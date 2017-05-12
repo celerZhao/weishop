@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="format-detection" content="telephone=no,email=no"/>
+    <meta name="ML-Config" content="fullscreen=yes,preventMove=no"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <title>发布评价</title>
+    <link rel="stylesheet" href="css/global-mobile.css"/>
+    <link rel="stylesheet" href="css/layout-mobile.css"/>
+    <link rel="stylesheet" href="css/dialog.css"/>
+    <script>
+        var cssEl = document.createElement('style');
+        document.documentElement.firstElementChild.appendChild(cssEl);
+        function setPxPerRem() {
+            var dpr = 1;
+            var pxPerRem = document.documentElement.clientWidth * dpr / 32;
+            if (pxPerRem < 10) pxPerRem = 10;
+            if (pxPerRem > 20) pxPerRem = 20;
+            cssEl.innerHTML = 'html{font-size:' + pxPerRem + 'px!important;}';
+        }
+        setPxPerRem();
+    </script>
+</head>
+<body>
+<div class="container">
+
+    <div class="row pj-list issue">
+        <ul class="list-unstyled">
+            <li class="first">
+                <div class="pingjia">
+                    <div class="pingjia-title fs-12">
+                        <img src="./img/dazhongcard.png" alt="大众储油卡" class="chuyoucard">
+                        <span class="star">
+                          <i class="pingjia-star start-light"></i>
+                          <i class="pingjia-star start-light"></i>
+                          <i class="pingjia-star start-light"></i>
+                          <i class="pingjia-star start-light"></i>
+                          <i class="pingjia-star start-light"></i>
+                        </span>
+                        <span class="inline-block good" id="good">非常好</span>
+                    </div>
+                </div>
+            </li>
+            <li class="pingjia">
+              <textarea rows="6" maxlength="200" placeholder="商品满足您的期待吗?说说您的心得，分享给想买的他们吧！" class="tex-area"></textarea>
+            </li>
+            <li class="pingjia">
+              <div class="page-bar wrap-pj mb-10 top-line">
+                  <a href="#nav-pingjia" class="text-pj active">加油方便</a>
+                  <a href="#nav-pingjia" class="text-pj">赚钱利器</a>
+                  <a href="#nav-pingjia" class="text-pj">年化高</a>
+                  <a href="#nav-pingjia" class="text-pj">赠送多</a>
+              </div>
+            </li>
+
+        </ul>
+    </ul>
+  </div>
+
+  <div class="mt-20">
+      <a class="btn btn-danger btn-danger2" href="#" id="fabu">发布</a>
+  </div>
+</div>
+
+
+<script src="js/lib/jquery-1.11.3.min.js"></script>
+<script src="js/bOilPlugIn/bOilPlugIn.js"></script>
+<script>
+    var bOilApp = new bOilPlugIn(),
+            App = {
+                status: 0,   // 0 前端开发，1 后端开发
+                isHaspwd: 0,
+                init: function () {
+                  bOilApp.fixedBtn('#fixedBtn');
+                  $('.issue .text-pj').on('click', function() {
+                      $(this).toggleClass('active');
+                  // $(this).addClass('active').siblings().removeClass('active');
+                  });
+
+                  // 发布
+                  $('.tex-area').focus();
+                  $('#fabu').on('click', function() {
+                    var areaVal = $('.tex-area').val()+'';
+                    if (areaVal.length >= 200) {
+                      bOilApp.alertMsg('字数不能超过200!',null,null,'Clear');
+                    }else {
+                      if (App.status) {
+                                //前端校验通过,后端请求
+                                $.ajax({
+                                    url: '',
+                                    dataType: '',
+                                    data: {},
+                                    type: 'post',
+                                    success: function () {
+                                        //to do something...
+
+                                        bOilApp.alertMsg('发布成功');
+                                    },
+                                    error: function () {
+                                        bOilApp.alertMsg('发布失败');
+                                    }
+                                });
+                        }else {// 前端开发
+
+                          bOilApp.alertMsg('发布成功');
+                        }
+                      // bOilApp.alertMsg('发布成功',null,null,'Clear');
+                    }
+                  })
+
+                  App.starLinght();
+              },
+              // 点击星星
+              starLinght: function() {
+                $('.pingjia-star').on('click', function() {
+                    var startTxt = ["非常差","较差","一般","较好","非常好"];
+                    $(this).siblings().removeClass('start-light');
+                    var index = $(this).index()+1;
+                    $('.pingjia-star:lt('+index+')').addClass('start-light');
+                    $('#good').html(startTxt[index-1]);
+                });
+              }
+            };
+
+    $(function () {
+        App.init();
+    });
+</script>
+</body>
+</html>

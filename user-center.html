@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no,email=no" />
+    <meta name="ML-Config" content="fullscreen=yes,preventMove=no" />
+    <meta name="viewport"
+         content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>微商城-我的账户</title>
+    <link rel="stylesheet" href="css/global-mobile.css" />
+    <link rel="stylesheet" href="css/layout-mobile.css" />
+    <script>
+    var cssEl = document.createElement('style');
+    document.documentElement.firstElementChild.appendChild(cssEl);
+    function setPxPerRem() {
+        var dpr = 1;
+        var pxPerRem = document.documentElement.clientWidth * dpr / 32;
+        if (pxPerRem < 10) pxPerRem = 10;
+        if (pxPerRem > 20) pxPerRem = 20;
+        cssEl.innerHTML = 'html{font-size:' + pxPerRem + 'px!important;}';
+    }
+    setPxPerRem();
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="row pt-20 pb-10 pl-15 pr-15 bg-danger2 fs-12">
+            <div class="left">
+                <p>已购油量(升)<i id="showBottomBox" class="icon iconfont fs-12 ml-5 text-white">&#xe67f;</i></p>
+                <p class="fs-20">900.00</p>
+            </div>
+            <div class="right">
+                <p>购买成本（元）：XX.XX</p>
+                <p>持有市值（元）：XX.XX</p>
+            </div>
+        </div>
+        <ul class="row list-unstyled list-p5 list-border setdpwd">
+            <li class="pb-25 send-oil">
+                <label>获赠邮箱 <a class="block mt-10" href="javascript:;">每天送你一升油</a></label>
+                <div class="form-group mb-0">
+                    <a class="form-control pr-15 text-right" href="receive-tank.html">查看详情</a>
+                </div>
+                <i class="iconfont icon-jiantou-copy2"></i>
+            </li>
+        </ul>
+        <ul class="row list-unstyled list-p5 list-border mt-10 mb-10 setdpwd">
+            <li>
+                <label>可用加油金额<i class="icon iconfont fs-12 ml-5 text-gray">&#xe67f;</i></label>
+                <div class="form-group mb-0">
+                    <a class="form-control pr-15 text-right text-danger" href="javascript:;">¥XXX元</a>
+                </div>
+                <i class="iconfont icon-jiantou-copy2"></i>
+            </li>
+        </ul>
+        <ul class="row list-unstyled list-p5 list-border setdpwd">
+            <li>
+                <label>储油明细</label>
+                <div class="form-group mb-0">
+                    <a class="form-control pr-15 text-right" href="oil-storage-detail.html"></a>
+                </div>
+                <i class="iconfont icon-jiantou-copy2"></i>
+            </li>
+            <li>
+                <label>加油明细</label>
+                <div class="form-group mb-0">
+                    <a class="form-control pr-15 text-right" href="add-oil-detail.html"></a>
+                </div>
+                <i class="iconfont icon-jiantou-copy2"></i>
+            </li>
+            <li>
+                <label>账号绑定</label>
+                <div class="form-group mb-0">
+                    <a class="form-control pr-15 text-right" href="javascript:;"></a>
+                </div>
+                <i class="iconfont icon-jiantou-copy2"></i>
+            </li>
+        </ul>
+    </div>
+
+    <a id="fixedBtn" class="btn btn-danger btn-danger2 btn-fixed radius0" href="javascript:;">下载APP去提油</a>
+
+
+    <!--<div class="mask-inner mask-inner-bottom">
+        <h2 class="title text-center">已购油量<i id="tipsCloseBtn" class="icon-no icon-btn"></i></h2>
+        <div class="cont word-break alone">
+            <div>
+                <p><span>储油总量:</span>当前储油卡的升数总和</p>
+                <p><span>购买成本:</span>当前储油卡购买时的支付金额总和</p>
+                <p><span>持有市值:</span>当前储油卡购买时的支付金额总和</p>
+                <div>
+                    <p><span>积分油箱:</span>客户可通过平台活动获取油品放于积分油箱内</p>
+                </div>
+            </div>
+        </div>
+    </div>-->
+
+    <script src="js/lib/jquery-1.11.3.min.js"></script>
+    <script src="js/bOilPlugIn/bOilPlugIn.js"></script>
+    <script>
+    var bOilApp = new bOilPlugIn(),
+        App = {
+        //是否后端开发状态(0前端，1后端)
+        status: 0,
+
+        init: function() {
+            //已购油量
+            var htm = '<div id="maskFull" class="mask-full active"></div>'
+                 + '<div id="maskInner" class="mask-inner mask-inner-bottom active">'
+                 + '<h2 class="title text-center">已购油量<i id="tipsCloseBtn" class="icon-no icon-btn"></i></h2>'
+                 + '<div class="cont word-break alone"><div>'
+                 + '<p><span>储油总量:</span>当前储油卡的升数总和</p>'
+                 + '<p><span>购买成本:</span>当前储油卡购买时的支付金额总和</p>'
+                 + '<p><span>持有市值:</span>当前储油卡购买时的支付金额总和</p>'
+                 + '<div><p><span>积分油箱:</span>客户可通过平台活动获取油品放于积分油箱内</p> </div> </div> </div> </div>';
+
+            $('#showBottomBox').on('click', function () {
+                $('body').append(htm);
+            });
+            setInterval(function(){
+                $('.mask-inner-bottom h2').click(function(){
+                    $('#maskFull, #maskInner').remove();
+                });
+            },1000);
+        }
+    };
+    $(function() {
+        App.init();
+    });
+    </script>
+</body>
+</html>

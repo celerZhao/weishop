@@ -193,8 +193,8 @@
 				focus = 0;
 			} else {
 				if (_this.value[_this.index] == "0") {
-					str = '<dl><dd ref="0" class="focus">请选择</dd>';
-					//str = '<dl>';
+					//str = '<dl><dd ref="0" class="focus">请选择</dd>';
+					str = '<dl>';
 					focus = 0;
 				}
 				if (item.length > 0 && this.default == 1) {

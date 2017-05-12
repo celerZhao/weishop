@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no,email=no" />
+    <meta name="ML-Config" content="fullscreen=yes,preventMove=no" />
+    <meta name="viewport"
+         content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>优惠券</title>
+    <link rel="stylesheet" href="css/global-mobile.css" />
+    <link rel="stylesheet" href="css/layout-mobile.css" />
+    <script>
+    var cssEl = document.createElement('style');
+    document.documentElement.firstElementChild.appendChild(cssEl);
+    function setPxPerRem() {
+        var dpr = 1;
+        var pxPerRem = document.documentElement.clientWidth * dpr / 32;
+        if (pxPerRem < 10) pxPerRem = 10;
+        if (pxPerRem > 20) pxPerRem = 20;
+        cssEl.innerHTML = 'html{font-size:' + pxPerRem + 'px!important;}';
+    }
+    setPxPerRem();
+    </script>
+</head>
+<body>
+    <div class="container zhichong">
+        <div class="tipbar row">暂无现金券可用</div>
+
+        <div class="quan_list row list_container">
+            <ul class="list-unstyled list-p5 bg-default">
+                <li class="quan">
+                    <div class="clear">
+                        <div class="col-xs-3 pr-0">
+                            <p class="mt-15"><span class="text-333"><span class="fs-22"> 550</span>元</span></p>
+                        </div>
+                        <div class="col-xs-7 pr-0 pl-0">
+                            <p class="quan_name text-333 mb-0">【抄底券】满24000减550</p>
+                            <p class="quan_date mb-0">2017年02月07日12:20</p>
+                        </div>
+                        <div class="col-xs-2 ">
+                            <p class="radio_span mt-20">
+                                <i class="radio_yes"></i>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="pl-10 pr-10 pt-5 quan_date quan_line"><span class="pull-left">满24000元可用，仅限大众储油卡</span>
+                        <span class="pull-right">未使用</span></div>
+                </li>
+                <li class="quan">
+                    <div class="clear">
+                        <div class="col-xs-3 pr-0">
+                            <p class="mt-15"><span class="text-333"><span class="fs-22"> 350</span>元</span></p>
+                        </div>
+                        <div class="col-xs-7  pr-0 pl-0">
+                            <p class="quan_name text-333 mb-0">【抄底券314】满14000减550</p>
+                            <p class="quan_date mb-0">2017年02月07日12:20</p>
+                        </div>
+                        <div class="col-xs-2">
+                            <p class="radio_span mt-20">
+                                <i class="radio_no"></i>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="pl-10 pr-10 pt-5 quan_date quan_line"><span class="pull-left">满24000元可用，仅限大众储油卡</span>
+                        <span class="pull-right">未使用</span></div>
+                </li>
+                <li class="quan">
+                    <div class="clear">
+                        <div class="col-xs-3 pr-0">
+                            <p class="mt-15"><span class="text-333"><span class="fs-22"> 350</span>元</span></p>
+                        </div>
+                        <div class="col-xs-7  pr-0 pl-0">
+                            <p class="quan_name text-333 mb-0">【抄底券314】满14000减550此处换一行此处换一行此处换一行</p>
+                            <p class="quan_date mb-0">2017年02月07日12:20</p>
+                        </div>
+                        <div class="col-xs-2">
+                            <p class="radio_span mt-20">
+                                <i class="radio_no"></i>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="pl-10 pr-10 pt-5 quan_date quan_line"><span class="pull-left">满24000元可用，仅限大众储油卡</span>
+                        <span class="pull-right">未使用</span></div>
+                </li>
+            </ul>
+        </div>
+        <a id="fixedBtn" class="btn btn-danger btn-danger2 btn-fixed radius0" href="javascript:;">确定</a>
+    </div>
+    <script src="js/lib/jquery-1.11.3.min.js"></script>
+    <script>
+    var App = {
+        //是否后端开发状态(0前端，1后端)
+        status: 0,
+
+        init: function() {
+
+            $(".quan_list .quan").on("click", function() {
+                var _radio = $(this).find("i");
+                if (!$(this).hasClass("quan_enough")) {
+                    if (_radio.hasClass("radio_yes")) {
+                        _radio.removeClass("radio_yes").addClass("radio_no");
+                    } else if (_radio.hasClass("radio_no")) {
+                        _radio.removeClass("radio_no").addClass("radio_yes");
+                    }
+                }
+                // 用券达到满减金额，其他未选券则置灰不能再选
+                var a = 1000, b = 900; //
+                if (a > b) {
+                    $(".quan_list .quan").each(function() {
+                        var _this = $(this);
+                        var _radio_enough = _this.find("i.radio_no");
+                        if (_radio_enough.length > 0) {
+                            _this.addClass("quan_enough");
+                        }
+
+                    })
+                }
+            })
+        }
+    };
+
+    $(function() {
+        App.init();
+    });
+    </script>
+</body>
+</html>

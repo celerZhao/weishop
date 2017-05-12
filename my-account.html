@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="format-detection" content="telephone=no,email=no" />
+<meta name="ML-Config" content="fullscreen=yes,preventMove=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+<title>我的账户</title>
+<link rel="stylesheet" href="css/global-mobile.css" />
+<link rel="stylesheet" href="css/layout-mobile.css" />
+<script>
+var cssEl = document.createElement('style');
+document.documentElement.firstElementChild.appendChild(cssEl);
+function setPxPerRem(){
+    var dpr = 1;
+    var pxPerRem = document.documentElement.clientWidth * dpr / 32;
+    if (pxPerRem < 10) pxPerRem = 10;
+    if (pxPerRem > 20) pxPerRem = 20;
+    cssEl.innerHTML = 'html{font-size:' + pxPerRem + 'px!important;}';
+}
+setPxPerRem();
+</script>
+</head>
+<body class="body">
+<div class="container">
+    <div class="topbar row bought-content">
+        <div class="bought-item clear">
+          <div class="bought-item-left pull-left">
+            <span>已购油量(升)</span>
+            <i class="iconfont icon-wenhao" id="icon-wenhao"></i>
+          </div>
+          <div class="bought-item-right pull-right">
+            <span>购油成本(元):</span><i class="money-num">88.88</i>
+          </div>
+        </div>
+        <div class="bought-item clear">
+          <div class="bought-item-left pull-left">
+            <span class="oil-num">900.00</span>
+          </div>
+          <div class="bought-item-right pull-right">
+            <span>持有市值(元):</span><i class="money-num">88.88</i>
+          </div>
+        </div>
+    </div>
+    <ul class="row list-unstyled list-p5 list-border setdpwd">
+        <li class="list-li">
+            <div class="list-li-con clear font-color">
+              <label>获赠油箱</label>
+              <a class="form-group mb-0 block pull-right" href="javascript:" id="btn-xq">
+                  <span class="font-color">查看详情</span>
+                  <i class="iconfont icon-jiantou-copy2 jiantou-own font-color"></i>
+              </a>
+            </div>
+            <a href="###" class="every-oil">每天送你一升油</a>
+        </li>
+    </ul>
+
+    <ul class="row list-unstyled list-p5 setdpwd mt-10 tap-li">
+        <li data-control="可用加油金额">
+            <label class="w">可用加油金额<i class="iconfont icon-wenhao"></i></label>
+            <div class="form-control pr-0 text-gray text-right"><span class="text-danger">¥1544.00</span><i class="iconfont icon-jiantou-copy2 jiantou-own font-color"></i></div>
+        </li>
+    </ul>
+
+    <ul class="row list-unstyled list-p5 setdpwd mt-10 tap-li">
+        <li class="list-li" data-control="储油账单">
+            <label class="w">储油账单</label>
+            <div class="form-control pr-0 text-gray text-right"><i class="iconfont icon-jiantou-copy2 jiantou-own font-color"></i></div>
+        </li>
+        <div class="border-bottom-line"></div>
+    </ul>
+    <ul class="row list-unstyled list-p5 setdpwd tap-li">
+        <li class="list-li" data-control="加油明细">
+            <label class="w">加油明细</label>
+            <div class="form-control pr-0 text-gray text-right"><i class="iconfont icon-jiantou-copy2 jiantou-own font-color"></i></div>
+        </li>
+        <div class="border-bottom-line"></div>
+    </ul>
+    <ul class="row list-unstyled list-p5 setdpwd tap-li">
+        <li class="list-li" data-control="账号绑定">
+            <label class="w">账号绑定</label>
+            <div class="form-control pr-0 text-gray text-right">
+              <span style="color:#000;">188****8845</span><i class="iconfont icon-jiantou-copy2 jiantou-own font-color"></i></div>
+        </li>
+    </ul>
+
+    <ul class="row list-unstyled list-p5 setdpwd tap-li mt-10">
+        <li class="list-li" data-control="车主身份确认">
+            <label class="w">车主身份确认</label>
+            <div class="form-control pr-0 text-gray text-right"><i class="iconfont icon-jiantou-copy2 jiantou-own font-color"></i></div>
+        </li>
+    </ul>
+
+</div>
+<div class="mt-30 fixed">
+    <!--<a id="submitBtn" class="btn btn-danger btn-danger2" href="javascript:">下载APP去提油</a>-->
+    <a id="submitBtn" class="btn btn-danger btn-danger2 btn-fixed radius0" href="javascript:;">下载APP去提油</a>
+</div>
+
+<!-- 查看详情 -->
+<!--<div class="details-wrap" style="display:none">
+  <div class="details-footer font-color">
+    <div class="details-header">
+      <span class="details-title">已购油量</span>
+      <span class="details-close">X</span>
+    </div>
+    <div class="details-content">
+      <ul class="list-unstyled list-two">
+          <li>
+            <span class="jifen">储油总量:</span>
+            <span class="jifen-desc">当前储油卡的升数总和</span>
+          </li>
+          <li>
+            <span class="jifen">购买成本:</span>
+            <span class="jifen-desc">当前储油卡购买时的支付金额总和</span>
+            </li>
+          <li>
+            <span class="jifen">持有市值:</span>
+            <span class="jifen-desc">当前储油卡升数总和*当前油价</span>
+          </li>
+      </ul>
+      <ul class="list-unstyled list-two">
+        <li>
+          <span class="jifen">积分邮箱:</span>
+          <span class="jifen-desc">客户可通过平台活动获取油品放于积分邮箱内在购买产品时进行价格抵扣</span>
+        </li>
+    </ul>
+    </div>
+  </div>
+</div>-->
+
+
+<script src="js/lib/jquery-1.11.3.min.js"></script>
+<script src="js/bOilPlugIn/bOilPlugIn.js"></script>
+<script>
+var bOilApp = new bOilPlugIn(),
+    App = {
+    //是否后端开发状态(0前端，1后端)
+    status: 0,
+
+    isHaspwd: 0,
+
+    init: function () {
+        //var nTime = new Date().getHours();
+
+        //充值成功后需要圈存
+        $('#layerOneBtnRefresh').on('click', function () {
+            bOilApp.tips({
+                title: '充值成功后需要圈存',
+                closeId: '',
+                btnNums: 1,
+                content: '充值成功后，需要您拿卡到加油站“圈存”后使用，工作人员在圈存的机器上操作后，您可到加油机刷卡加油了。',
+                btn: {
+                    btnSure: {
+                        text: '我知道了',
+                        href: 'javascript:void(0);',
+                        fun: function(){
+                            return function(){
+                                //alert("ooooooookk");
+                            }
+                        }
+                    }
+                },
+                alone: true
+            });
+        });
+
+        // 点击查看详情
+        $('#btn-xq').on('click', function() {
+          //$('.details-wrap').show();
+          window.location.href = 'receive-tank.html';
+        });
+        // 已购油量
+        $('.icon-wenhao').on('click', function() {
+            var tip_html = '<div class=" pb-10">'
+                            +  '<div class="row">'
+                            +  '<span class="block col-xs-3 pr-0">储油总量：</span>'
+                            +  '<span class="block col-xs-9 pl-0">当前储油卡的升数总和</span>'
+                            +  '</div>'
+                            +  '<div class="row">'
+                            +  '<span class="block col-xs-3 pr-0">购买成本：</span>'
+                            +  '<span class="block col-xs-9 pl-0">当前储油卡购买时的支付金额总和</span>'
+                            +  '</div>'
+                            +  '<div class="row">'
+                            +  '<span class="block col-xs-3 pr-0">持有市值：</span>'
+                            +  '<span class="block col-xs-9 pl-0">当前储油卡升数总和*当前油价</span>'
+                            +  '</div>'
+                            +'</div>'
+                            +  '<div class="border-bottom-line"></div>'
+                            +  '<div class="pt-10">'
+                            +  '  <div class="row">'
+                            +  '<p class="col-xs-3 pr-0">积分油箱：</p>'
+                            +  '<p class="col-xs-9 pl-0 ">客户可通过平台活动获取油品放于积分邮箱内在购买产品时进行价格抵扣</p>'
+                            +  '</div>'
+                            + '</div>';
+            bOilApp.tips({
+                title: '已购油量',
+                closeId: 'tipsCloseBtn',
+                btnNums: 0,
+                content: tip_html,/*
+                btn: {
+                    btnSure: {
+                        text: '立即填写',
+                        href: 'car-manage.html',
+                        btnStyle:"background-color: #f00; color: #fff;"
+                    }
+                },*/
+                fixedHeight: false,
+                alone: true,
+                bottom:true
+            });
+
+
+        })
+
+        // 点击储油 加油 账号绑定
+        $('.tap-li>li').on('click', function() {
+          var val = $(this).data('control');
+          if (val=='可用加油金额') {
+            //alert('可用加油金额');
+          }else if (val=='储油账单') {
+            window.location.href = 'oil-storage-order.html';
+          }else if (val=='加油明细') {
+            window.location.href = 'add-oil-detail.html';
+          }else if (val=='账号绑定') {
+            // alert('账号绑定');
+          }else if (val=='车主身份确认') {
+            window.location.href = 'car-manage.html'
+          }
+        })
+    }
+};
+
+$(function(){
+    App.init();
+});
+</script>
+</body>
+</html>

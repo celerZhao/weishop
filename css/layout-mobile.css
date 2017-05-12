@@ -142,13 +142,15 @@ a.bg-warning:active {
 .mask-inner .title {
     color: #333 !important;
 }
+
 /* 弹框背景颜色 */
-.mask-inner .title{
-    background:#e3e3e3;
+.mask-inner .title {
+    background: #e3e3e3;
 }
+
 /* 弹窗关闭按钮颜色 */
-.mask-inner .icon-btn{
-    color:#a2a2a2 !important;
+.mask-inner .icon-btn {
+    color: #a2a2a2 !important;
 }
 
 /* 弹窗底部确定按钮 */
@@ -265,6 +267,7 @@ a.bg-warning:active {
     background: #ffffff;
 }
 
+
 /*充值明细列表*/
 .border-no {
     border: none !important;
@@ -274,8 +277,8 @@ a.bg-warning:active {
     border: 1px solid red;
     line-height: 1.3rem;
     border-radius: 3px;
-    position:relative;
-    top:-0.2rem;
+    position: relative;
+    top: -0.2rem;
 }
 
 .border-bottom-line {
@@ -329,16 +332,6 @@ a.bg-warning:active {
     border: none;
     font-size: 1.4rem;
     text-align: center;
-}
-
-.quan-title {
-    margin: 0 -1.5rem;
-    padding: .8rem 1.5rem;
-    color: #a5a5a5;
-}
-
-.quan {
-    width: 4.2rem;
 }
 
 .pull-right .icon-xiangshangfanye,
@@ -415,10 +408,11 @@ a.bg-warning:active {
     -ms-flex: 3; /* IE 10 */
     flex: 3; /* NEW, Spec - Opera 12.1, Firefox 20+ */
 }
-.fixed-bottom{
+
+.fixed-bottom {
     position: fixed;
-    bottom:0;
-    width:100%;
+    bottom: 0;
+    width: 100%;
     z-index: 100;
 }
 
@@ -502,41 +496,45 @@ a.bg-warning:active {
     border-radius: 2rem;
     width: 1.6rem;
     height: 1.6rem;
-    margin: 0.12rem 0.1rem ;
+    margin: 0.12rem 0.1rem;
 }
 
 .radio-a.active {
     text-align: right;
-    background:#fc3635;
+    background: #fc3635;
+    border: 0.1rem solid  #fc3635;
 }
 
 .radio-a.active .radio-i {
     background: #ffffff;
-    margin-right: 0.1rem ;
+    margin-right: 0.1rem;
 }
+
 /*==分享==*/
-.share-fixed{
-    position:fixed;
-    right:1rem;
-    bottom:15rem;
-    width:4rem;
-    height:4rem;
-    vertical-align:middle;
+.share-fixed {
+    position: fixed;
+    right: 1rem;
+    bottom: 15rem;
+    width: 4rem;
+    height: 4rem;
+    vertical-align: middle;
 }
+
 /*==置顶==*/
-.to-top{
-    position:fixed;
-    right:1rem;
-    bottom:8rem;
-    width:4rem;
-    height:4rem;
-    vertical-align:middle;
-    background:#fff;
-    border-radius:2rem;
-    border:1px solid #ccc;
+.to-top {
+    position: fixed;
+    right: 1rem;
+    bottom: 8rem;
+    width: 4rem;
+    height: 4rem;
+    vertical-align: middle;
+    background: #fff;
+    border-radius: 2rem;
+    border: 1px solid #ccc;
 }
-.to-top img{
-    width:1.8rem;
+
+.to-top img {
+    width: 1.8rem;
 }
 
 /*====大众储油卡 end====*/
@@ -757,8 +755,7 @@ a.bg-warning:active {
 }
 
 .sells {
-    width: 11rem;
-    height: 11rem;
+    width: 10rem;
     margin: 4rem auto;
     display: block;
 }
@@ -860,10 +857,11 @@ a.bg-warning:active {
     border: none;
     border-left: 1px solid #ccc;;
     background: none;
-    text-transform:uppercase;
+    text-transform: uppercase;
+    border-radius: 0 !important;
 }
 
-.car-displacement{
+.car-displacement {
     position: absolute;
     top: 50%;
     right: 1.5rem;
@@ -1069,105 +1067,206 @@ a.bg-warning:active {
 }
 
 /*全部评价*/
-.pj-eval {border-radius: 0;}
+.pj-eval {
+    border-radius: 0;
+}
+
 .wrap-pj {
-  background-color: white!important;
-  display: flex;
-  -webkit-display: flex;
-  justify-content: space-between;
+    background-color: white !important;
+    display: flex;
+    -webkit-display: flex;
+    justify-content: space-between;
 }
+
 .wrap-pj .text-pj {
-  color: #666!important;
-  padding: 0.1rem 0.5rem;
-  font-size: 1.2rem!important;
-  flex: 0 0 auto;
-  box-sizing: border-box;
-  text-align: center;
-  border-radius: 3rem;
-  background-color: #FFE6E7;
+    color: #666 !important;
+    padding: 0.1rem 0.5rem;
+    font-size: 1.2rem !important;
+    flex: 0 0 auto;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 3rem;
+    background-color: #FFE6E7;
 }
+
 .pj-list {
-  padding: 0 -1.5rem;
+    padding: 0 -1.5rem;
 }
+
 .pj-list .pingjia {
-  padding: 1.5rem;
+    padding: 1.5rem;
 }
+
 .pj-tent {
-  margin-bottom: 0!important;
-  padding-top: 4.8rem;
+    margin-bottom: 0 !important;
+    padding-top: 4.8rem;
 }
+
 .fixed-top {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 101;
-  margin-left: 0;
-  width: 100%;
-  max-width: 640px;
-  margin: 0 auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 101;
+    margin-left: 0;
+    width: 100%;
+    max-width: 640px;
+    margin: 0 auto;
 }
 
 /*发布*/
 .issue .pingjia-title {
-  display: flex;
-  -webkit-display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.issue .pingjia-title .chuyoucard {
-  border-radius: 0.6rem;
-  width: 26%;
-  height: 24%;
-}
-.issue .list-unstyled .first {
-  border-bottom: 1px solid #e8e8e8;
-}
-.tex-area {
-  width: 100%;
-  resize: none;
-  outline: none;
-  border: none;
-  font-size: 1.5rem;
-  color: #000;
-}
-.issue .good {
-  flex: 0 0 18%;
-  text-align: right;
-}
-.issue .star {
-  display: flex;
-  -webkit-display: flex;
-}
-.issue .text-pj {
-  background-color: #F5F5F5;
-  color: #B1B1B1!important;
-  padding: 0 1rem;
-}
-.issue .text-pj.active {
-  background-color: #FC3635;
-  color: white!important;
-}
-.issue .pingjia {
-  position: relative;
-}
-.top-line:before {
-  content: " ";
-  width: 90%;
-  height: 1px;
-  background-color: #e8e8e8;
-  position: absolute;
-  top: 0;
-  left: 5%;
+    display: flex;
+    -webkit-display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.icon-jiantou-copy2:before{
+.issue .pingjia-title .chuyoucard {
+    border-radius: 0.6rem;
+    width: 26%;
+    height: 24%;
+}
+
+.issue .list-unstyled .first {
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.tex-area {
+    width: 100%;
+    resize: none;
+    outline: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #000;
+}
+
+.issue .good {
+    flex: 0 0 18%;
+    text-align: right;
+}
+
+.issue .star {
+    display: flex;
+    -webkit-display: flex;
+}
+
+.issue .text-pj {
+    background-color: #F5F5F5;
+    color: #B1B1B1 !important;
+    padding: 0 1rem;
+}
+
+.issue .text-pj.active {
+    background-color: #FC3635;
+    color: white !important;
+}
+
+.issue .pingjia {
+    position: relative;
+}
+
+.top-line:before {
+    content: " ";
+    width: 90%;
+    height: 1px;
+    background-color: #e8e8e8;
+    position: absolute;
+    top: 0;
+    left: 5%;
+}
+
+.icon-jiantou-copy2:before {
     content: '\e688';
 }
-.rotate-90{
-    transform:rotate(90deg);
-    -ms-transform:rotate(90deg); 	/* IE 9 */
-    -moz-transform:rotate(90deg); 	/* Firefox */
-    -webkit-transform:rotate(90deg); /* Safari 和 Chrome */
-    -o-transform:rotate(90deg); 	/* Opera */
+
+.rotate-90 {
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -moz-transform: rotate(90deg); /* Firefox */
+    -webkit-transform: rotate(90deg); /* Safari 和 Chrome */
+    -o-transform: rotate(90deg); /* Opera */
+}
+
+.radius20 {
+    border-radius: 2rem !important;
+}
+
+/*==优惠券= 个人中心券 和 购买选择券 =*/
+.zhichong .quan_tab .quan_active {
+    border-bottom: 0.2rem solid #fc3635;
+    padding: 0;
+    color: #fc3635
+}
+
+.zhichong .quan_tab .quan_active a {
+    color: #fc3635 !important;
+}
+
+.zhichong .quan_tab a {
+    display: inline-block;
+    padding: 1rem 0;
+    color: #000 !important;
+}
+
+.zhichong .quan_no {
+    background-image: url(../img/quan_no.png);
+    width: 6rem;
+    height: 6rem;
+    background-size: 100%;
+}
+
+.zhichong .quan {
+    background: #fff;
+    border-radius: 0.4rem;
+    margin: 0.6rem;
+}
+
+.zhichong .quan .quan_name {
+}
+
+.zhichong .quan .quan_date {
+    font-size: 1.0rem;
+    color: #ccc;
+}
+
+.zhichong .quan_line {
+    border-top: 1px dotted #ccc;
+}
+
+.zhichong .quan_used_list p {
+    color: #ccc;
+}
+
+.zhichong .quan_enough p {
+    color: #ccc;
+}
+
+.zhichong .quan_enough p span {
+    color: #ccc;
+}
+
+.zhichong .radio_span {
+    width: 2rem;
+}
+
+.zhichong .radio_span .radio_yes {
+    background: url(../img/radio.png) no-repeat;
+    width: 2rem;
+    height: 2rem;
+    background-size: 80%;
+}
+
+.zhichong .radio_span .radio_no {
+    background: url(../img/radio_no.png) no-repeat;
+    width: 2rem;
+    height: 2rem;
+    background-size: 80%;
+}
+
+.tipbar {
+    padding: 1rem 1.5rem;
+    color: #e68e46;
+    background-color: #fff5eb;
+    border-bottom: 1px solid #ddd;
 }

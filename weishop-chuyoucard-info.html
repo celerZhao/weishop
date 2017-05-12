@@ -98,7 +98,7 @@
         </div>
     </div>
 
-    <div class="quan-title bg_fff ">
+    <div class="quan-title bg_fff pingjia-container">
         <div class="border-bottom-line"></div>
         <span class="fs-12 text-gray  pt-10">赠送：<span class="text-danger">4.00升</span> 价值：<span class="text-danger">25.88元</span></span>
         <div class="fs-10">广东/深圳市参考油价：<span>6.47</span>(元/升)</div>
@@ -198,7 +198,7 @@
     <div class="row bg_fff tuijian">
         <div class="display-flex">
             <div class="flex-1">
-                <img src="img/tuijian_03.jpg" alt=""/>
+                <img class="bg-img"  src="img/tuijian_031.jpg"  alt=""/>
                 <div class="pt-10">大众加油卡</div>
                 <div>
                     <div class="text-danger pull-left"><span class="fs-10">¥</span><span class="fs-12">1,288</span>.<span class="fs-10">00</span></div>
@@ -206,7 +206,7 @@
                 </div>
             </div>
             <div class="flex-1">
-                <img src="img/tuijian1_03.jpg" alt=""/>
+                <img class="bg-img"  src="img/tuijian1_03.jpg" alt=""/>
                 <div class="pt-10">大众储油体验卡</div>
                 <div>
                     <div class="text-danger pull-left"><span class="fs-10">¥</span><span class="fs-12">1,288</span>.<span class="fs-10">00</span></div>
@@ -258,6 +258,7 @@
 <script src="js/swiper/amazeui.swiper.min.js"></script>
 
 <script>
+
     var bOilApp = new bOilPlugIn(),
             selectArea = new MobileSelectArea(),
             selectOil = new MobileSelectArea(),
@@ -266,7 +267,7 @@
                 orderObj: {},   // 订单obj
 
                 init: function (){
-
+                    $(".bg-img").attr("onerror","App.add_bgimg(this)");
 
                     // 图片轮播
                     $('#card_pics').swiper({
@@ -345,26 +346,6 @@
                             $(".to-top").addClass("hidden")
                         }
                     });
-                    // 分享按钮
-                  /*  $("#share-btn").on("click",function(){
-                        var tip_html = '<div class="row" style="margin-bottom:50px;">'
-                                +'<div class="col-xs-6 text-center"><img style="width:5rem;" src="img/haoyou.png" alt=""/><p class="fs-10">微信好友</p></div>'
-                                +'<div class="col-xs-6 text-center"><img style="width:5rem;" src="img/haoyou.png" alt=""/><p class="fs-10">微信朋友圈</p></div>'
-                                +'</div>'
-                                +'<div class="btnCont">'
-                                + '<a id="btnSure" class="radius0 btn btn-danger btn-danger2 btn-fixed" style="background-color: #f00; color: #fff;" href="javascript:;">取消</a>'
-                                + '</div>';
-                        bOilApp.tips({
-                            title: '分享',
-                            closeId: 'tipsCloseBtn',
-                            btnNums: 0,
-                            content: tip_html,
-                            bottom:true,
-                            fixedHeight: false,
-                            alone: true
-                        });
-
-                    })*/
                 },
 
                 // 地区切换  更换油品
@@ -396,7 +377,13 @@
                 // 油品切换
                 oil_callback:function(){
 
+                },
+                add_bgimg: function (_this){
+                    _this.src="img/bg-img.png"
+                    _this.onerror=null;
                 }
+
+
 
             };
 

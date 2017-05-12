@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no,email=no" />
+    <meta name="ML-Config" content="fullscreen=yes,preventMove=no" />
+    <meta name="viewport"
+         content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>微商城-储油明细</title>
+    <link rel="stylesheet" href="css/global-mobile.css" />
+    <link rel="stylesheet" href="css/layout-mobile.css" />
+    <script>
+    var cssEl = document.createElement('style');
+    document.documentElement.firstElementChild.appendChild(cssEl);
+    function setPxPerRem() {
+        var dpr = 1;
+        var pxPerRem = document.documentElement.clientWidth * dpr / 32;
+        if (pxPerRem < 10) pxPerRem = 10;
+        if (pxPerRem > 20) pxPerRem = 20;
+        cssEl.innerHTML = 'html{font-size:' + pxPerRem + 'px!important;}';
+    }
+    setPxPerRem();
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <ul class="list-unstyled oil-storage">
+                <li>
+                    <div class="overhide p-10 pl-15 pr-15 bg-gray text-white">
+                        <span class="left">2017-05-05 05:05:05</span>
+                        <span class="right">待支付</span>
+                    </div>
+                    <div class="pt-10 pr-15 pb-10 pl-15 text-gray order-num">订单号:1705021517200026</div>
+                    <div class="p-10 pl-15 pr-15">
+                        <div>大众储油卡，xxxx升，1张</div>
+                        <div><span class="text-gray">油品：</span>广东/深圳市 V汽油92#</div>
+                        <div><span class="text-gray">单价：</span>6.47元/升</div>
+                        <div class="mb-10 text-right">
+                            <div><span class="text-gray">实付金额：</span>xxx.00元</div>
+                            <div><span class="text-gray">优惠金额：</span>xxx.00元</div>
+                        </div>
+                        <div class="text-right nowrap oil-storage-btn">
+                            <a class="btn btn-gray" href="my-account.html">取消订单</a>
+                            <a class="btn btn-danger" href="order-pay-confirm.html">立即支付</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="overhide p-10 pl-15 pr-15 bg-gray text-white">
+                        <span class="left">2017-05-05 05:05:05</span>
+                        <span class="right">已完成[已发货]</span>
+                    </div>
+                    <div class="pt-10 pr-15 pb-10 pl-15 text-gray order-num">订单号:1705021517200026</div>
+                    <div class="p-10 pl-15 pr-15">
+                        <div>大众储油卡，xxxx升，1张</div>
+                        <div><span class="text-gray">油品：</span>广东/深圳市 V汽油92#</div>
+                        <div><span class="text-gray">单价：</span>6.47元/升</div>
+                        <div class="mb-10 text-right">
+                            <div><span class="text-gray">实付金额：</span>xxx.00元</div>
+                            <div><span class="text-gray">优惠金额：</span>xxx.00元</div>
+                        </div>
+                        <div class="text-right nowrap oil-storage-btn">
+                            <a class="btn btn-danger" href="javascript:;">评价</a>
+                            <a class="btn btn-danger" href="javascript:;">分享赚钱</a>
+                            <a class="btn btn-danger" href="weishop-chuyoucard-info.html">再次购买</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="overhide p-10 pl-15 pr-15 bg-gray text-white">
+                        <span class="left">2017-05-05 05:05:05</span>
+                        <span class="right">已作废</span>
+                    </div>
+                    <div class="pt-10 pr-15 pb-10 pl-15 text-gray order-num">订单号:1705021517200026</div>
+                    <div class="p-10 pl-15 pr-15">
+                        <div>大众储油卡，xxxx升，1张</div>
+                        <div><span class="text-gray">油品：</span>广东/深圳市 V汽油92#</div>
+                        <div><span class="text-gray">单价：</span>6.47元/升</div>
+                        <div class="mb-10 text-right">
+                            <div><span class="text-gray">实付金额：</span>xxx.00元</div>
+                            <div><span class="text-gray">优惠金额：</span>xxx.00元</div>
+                        </div>
+                        <div class="text-right nowrap oil-storage-btn">
+                            <a class="btn btn-danger" href="weishop-chuyoucard-info.html">再次购买</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <script src="js/lib/jquery-1.11.3.min.js"></script>
+    <script src="js/bOilPlugIn/bOilPlugIn.js"></script>
+    <script>
+    var bOilApp = new bOilPlugIn(),
+        App = {
+        //是否后端开发状态(0前端，1后端)
+        status: 0,
+
+        init: function() {
+
+        }
+    };
+    $(function() {
+        App.init();
+    });
+    </script>
+</body>
+</html>

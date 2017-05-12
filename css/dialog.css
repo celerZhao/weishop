@@ -147,6 +147,7 @@
   background-color: #fc3635;
   color:#fff;
   display: block;
+  font-size:1.4rem;
   width: 100%;
   height: 100%;
   /*color: #47b5ca;*/
@@ -158,7 +159,9 @@
 .ui-dialog-action .ui-confirm-close, .ui-dialog-action .ui-confirm-no {
   /*color: #747474;*/
   color:#fff;
-  border-left: 1px solid #dcdcdc; }
+  border-left: 1px solid #dcdcdc;
+  font-size:1.4rem;
+}
 
 .ui-alert {
   border-radius: 5px;

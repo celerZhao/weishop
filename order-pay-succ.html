@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no,email=no" />
+    <meta name="ML-Config" content="fullscreen=yes,preventMove=no" />
+    <meta name="viewport"
+         content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>微商城-订单支付成功</title>
+    <link rel="stylesheet" href="css/global-mobile.css" />
+    <link rel="stylesheet" href="css/layout-mobile.css" />
+    <script>
+    var cssEl = document.createElement('style');
+    document.documentElement.firstElementChild.appendChild(cssEl);
+    function setPxPerRem() {
+        var dpr = 1;
+        var pxPerRem = document.documentElement.clientWidth * dpr / 32;
+        if (pxPerRem < 10) pxPerRem = 10;
+        if (pxPerRem > 20) pxPerRem = 20;
+        cssEl.innerHTML = 'html{font-size:' + pxPerRem + 'px!important;}';
+    }
+    setPxPerRem();
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="row bg-white text-center">
+            <div class="pay-suc mb-20"><img src="img/pay-suc.png"></div>
+            <p>您已购买大众储油体验卡，xx升，</p>
+            <p>消费金额为xx元</p>
+        </div>
+        <div class="row mt-15 clear">
+            <div class="col-xs-12">
+                <a class="btn btn-orange" href="javascript:;">分享赚钱</a>
+                <a class="btn btn-default mt-15 mb-15" href="javascript:;">下载APP提油</a>
+                <a class="btn btn-default" href="javascript:;">立即评价</a>
+            </div>
+        </div>
+    </div>
+    <div></div>
+
+    <script src="js/lib/jquery-1.11.3.min.js"></script>
+    <script src="js/bOilPlugIn/bOilPlugIn.js"></script>
+    <script>
+
+    </script>
+</body>
+</html>
