@@ -28,7 +28,7 @@
     </script>
 </head>
 <body>
-<div class="container">
+<div class="container" id="confirm">
 <!--    <div class="topbar row mb-0">
         <i class="icon-xiangxiafanye back"></i>
 
@@ -164,15 +164,72 @@
     </div>
 
 </div>
-<style>
-    .mask-inner .title{
-        background:#e3e3e3;
-    }
-    .mask-inner .icon-btn{
-        color:#a2a2a2 !important;
-    }
-</style>
 
+<!--优惠券start-->
+<div class="container zhichong" style="display:none;" id="yhq">
+    <div class="tipbar row">暂无现金券可用</div>
+
+    <div class="quan_list row list_container">
+        <ul class="list-unstyled list-p5 bg-default">
+            <li class="quan">
+                <div class="clear">
+                    <div class="col-xs-3 pr-0">
+                        <p class="mt-15"><span class="text-333"><span class="fs-22"> 550</span>元</span></p>
+                    </div>
+                    <div class="col-xs-7 pr-0 pl-0">
+                        <p class="quan_name text-333 mb-0">【抄底券】满24000减550</p>
+                        <p class="quan_date mb-0">2017年02月07日12:20</p>
+                    </div>
+                    <div class="col-xs-2 ">
+                        <p class="radio_span mt-20">
+                            <i class="radio_yes"></i>
+                        </p>
+                    </div>
+                </div>
+                <div class="pl-10 pr-10 pt-5 quan_date quan_line"><span class="pull-left">满24000元可用，仅限大众储油卡</span>
+                    <span class="pull-right">未使用</span></div>
+            </li>
+            <li class="quan">
+                <div class="clear">
+                    <div class="col-xs-3 pr-0">
+                        <p class="mt-15"><span class="text-333"><span class="fs-22"> 350</span>元</span></p>
+                    </div>
+                    <div class="col-xs-7  pr-0 pl-0">
+                        <p class="quan_name text-333 mb-0">【抄底券314】满14000减550</p>
+                        <p class="quan_date mb-0">2017年02月07日12:20</p>
+                    </div>
+                    <div class="col-xs-2">
+                        <p class="radio_span mt-20">
+                            <i class="radio_no"></i>
+                        </p>
+                    </div>
+                </div>
+                <div class="pl-10 pr-10 pt-5 quan_date quan_line"><span class="pull-left">满24000元可用，仅限大众储油卡</span>
+                    <span class="pull-right">未使用</span></div>
+            </li>
+            <li class="quan">
+                <div class="clear">
+                    <div class="col-xs-3 pr-0">
+                        <p class="mt-15"><span class="text-333"><span class="fs-22"> 350</span>元</span></p>
+                    </div>
+                    <div class="col-xs-7  pr-0 pl-0">
+                        <p class="quan_name text-333 mb-0">【抄底券314】满14000减550此处换一行此处换一行此处换一行</p>
+                        <p class="quan_date mb-0">2017年02月07日12:20</p>
+                    </div>
+                    <div class="col-xs-2">
+                        <p class="radio_span mt-20">
+                            <i class="radio_no"></i>
+                        </p>
+                    </div>
+                </div>
+                <div class="pl-10 pr-10 pt-5 quan_date quan_line"><span class="pull-left">满24000元可用，仅限大众储油卡</span>
+                    <span class="pull-right">未使用</span></div>
+            </li>
+        </ul>
+    </div>
+    <a id="fixedBtn" class="btn btn-danger btn-danger2 btn-fixed radius0" href="javascript:;">确定</a>
+</div>
+<!--优惠券end-->
 <script src="js/lib/jquery-1.11.3.min.js"></script>
 <script src="js/bOilPlugIn/bOilPlugIn.js"></script>
 <script src="js/lib/dialog.js"></script>
@@ -216,11 +273,6 @@
                     // 根据地区，后台获取油品 json ，选中展示 cookie中的油品
                     selectOil.init({trigger: '#oilType', data: json, default: 0, value:'2',text:["国V汽油92#"], position: "bottom", level: 1,callback:App.oil_callback});
 
-                    // 展开 购买产品期数
-              /*      $("#view_more_liter").on("click",function(){
-                        $("#liter").toggleClass("show_more")
-                        $(this).find("i").toggleClass("icon-xiangxiafanye");
-                    });*/
                     // 选择产品期数
                     $("#liter .inner").on("click", function () {
                         $(this).addClass('active').parent().siblings().find('.inner').removeClass('active');
@@ -237,6 +289,17 @@
                         var new_num = ++_num >=99 ? 99:_num;
 
                         $("#buy_num").val(new_num);
+                    })
+
+                    // 现金券
+                    $("#cash-quan").on("click",function(){
+                        $("#confirm").hide()
+                        $("#yhq").slideDown(200);
+
+                    })
+                    $("#fixedBtn").on("click",function(){
+                        $("#yhq").hide();
+                        $("#confirm").show();
                     })
 
                     // radio 开关 油箱抵扣
@@ -361,12 +424,40 @@
                 add_bgimg: function (_this){
                     _this.src="img/bg-img.png"
                     _this.onerror=null;
+                },
+                init_yhq: function() {
+
+                    $(".quan_list .quan").on("click", function() {
+                        var _radio = $(this).find("i");
+                        if (!$(this).hasClass("quan_enough")) {
+                            if (_radio.hasClass("radio_yes")) {
+                                _radio.removeClass("radio_yes").addClass("radio_no");
+                            } else if (_radio.hasClass("radio_no")) {
+                                _radio.removeClass("radio_no").addClass("radio_yes");
+                            }
+                        }
+                        // 用券达到满减金额，其他未选券则置灰不能再选
+                        var a = 1000, b = 900; //
+                        if (a > b) {
+                            $(".quan_list .quan").each(function() {
+                                var _this = $(this);
+                                var _radio_enough = _this.find("i.radio_no");
+                                if (_radio_enough.length > 0) {
+                                    _this.addClass("quan_enough");
+                                }
+
+                            })
+                        }
+                    })
                 }
+
+
 
             };
 
     $(function () {
         App.init();
+        App.init_yhq();
     });
 </script>
 </body>
