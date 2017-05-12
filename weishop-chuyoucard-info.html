@@ -247,7 +247,10 @@
         </div>
     </div>
     <a id="fixedBtn" class="radius0 btn btn-danger btn-danger2 btn-fixed" href="weishop-order-confirm.html">立即购买</a>
-
+    <div id="shareMask" class="mask-full active hidden">
+        <img src="img/tip-img.png" alt=""/>
+    </div>
+    
 
 </div>
 
@@ -346,6 +349,13 @@
                             $(".to-top").addClass("hidden")
                         }
                     });
+
+                    $("#share-btn").on("click",function(){
+                        $("#shareMask").removeClass("hidden");
+                    });
+                    $("#shareMask").on("click",function(){
+                        $(this).addClass("hidden");
+                    })
                 },
 
                 // 地区切换  更换油品

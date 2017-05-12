@@ -1270,3 +1270,8 @@ a.bg-warning:active {
     background-color: #fff5eb;
     border-bottom: 1px solid #ddd;
 }
+
+/* 兑付说明 修改group-control 内部 padding-left*/
+.pl-75{
+    padding-left:7.5rem !important;
+}
