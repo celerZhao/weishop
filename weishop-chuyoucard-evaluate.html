@@ -129,6 +129,7 @@
             App = {
                 status: 0,   // 0 前端开发，1 后端开发
                 isHaspwd: 0,
+                addMore:0,
 
                 init: function () {
                   bOilApp.fixedBtn('#fixedBtn');
@@ -148,11 +149,11 @@
                 // 加载更多
                 load_more:function(){
                     console.log("ajax 加载更多");
-
+                    App.addMore++;
                     var _html = '  <li class="mb-10">'
                                         +'<div class="pingjia">'
                                         +'<div class="pingjia-title fs-12">'
-                                        +'<span>158****1245</span><span class="pl-15"><i class="pingjia-star start-light "></i><i class="pingjia-star "></i><i class="pingjia-star "></i><i class="pingjia-star "></i><i class="pingjia-star "></i></span>'
+                                        +'<span>'+ App.addMore+'-158****1245</span><span class="pl-15"><i class="pingjia-star start-light "></i><i class="pingjia-star "></i><i class="pingjia-star "></i><i class="pingjia-star "></i><i class="pingjia-star "></i></span>'
                                         +'</div>'
                                         +'<div class="fs-10 text-gray">'
                                         +'<span>广东/深圳</span>&nbsp;<span>V汽油92#</span>&nbsp;<span>200升</span>'
