@@ -103,23 +103,7 @@
 
             init: function() {
                 // 地区选择
-                var selectArea = new MobileSelectArea();
-                /**
-                 * 初始化 地区选择
-                 * value: "省id，市id"
-                 * text: ["广东省","深圳市"]
-                 */
-                selectArea.init({
-                    trigger: '#area',
-                    data: "js/data.json",
-                    default: 0,
-                    value: "20,234",
-                    text: ["广东省", "深圳市"],
-                    position: "bottom",
-                    level: 2,
-                    callback:App.car_city
-                });
-                $("#area").attr("province_city","广东/深圳市");
+                App.getCityJson();
 
                 // 常用油品
                 $("#commonOils .inner").on("click", function() {
@@ -170,6 +154,34 @@
                         }
                     }
                 });
+            },
+            // 城市json
+            getCityJson:function(){
+                $.ajax({
+                    url: "js/data.json",
+                    success: function (json) {
+                        App.cityJson = json.data;
+                        var selectArea = new MobileSelectArea();
+                        /**
+                         * 初始化 地区选择
+                         * value: "省id，市id"
+                         * text: ["广东省","深圳市"]
+                         */
+                        selectArea.init({
+                            trigger: '#area',
+                            data: App.cityJson,
+                            default: 0,
+                            value: "20,234",
+                            text: ["广东省", "深圳市"],
+                            position: "bottom",
+                            level: 2,
+                            callback:App.car_city
+                        });
+                        $("#area").attr("province_city","广东/深圳市");
+
+                    }
+                });
+
             },
             car_city:function(){
                 var area = $("#area").val();
