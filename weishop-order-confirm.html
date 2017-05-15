@@ -135,7 +135,7 @@
     <div class="border-bottom-line"></div>
     <ul class="row list-unstyled list-p5 setdpwd mb-30">
         <li class="relative">
-            <label>油箱抵扣 <span class="ico-info">i</span></label>
+            <label>油箱抵扣 <span class="ico-info" id="view_deductRule">i</span></label>
             <a class="form-group mb-0 block mr-30 re" href="javascript:;">
                 <!--<input id="oil-off" class="form-control pr-30 fs-10 bg-white" readonly=""  value="暂无可抵扣金额">-->
                 <span class="fs-10 text-default  ml-30 pl-30 pt-10">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;暂无可抵扣金额<span class="text-danger"></span></span>
@@ -300,7 +300,29 @@
                     $("#fixedBtn").on("click",function(){
                         $("#yhq").hide();
                         $("#confirm").show();
-                    })
+                    });
+
+                    // 油箱抵扣规则弹框
+                    $("#view_deductRule").on("click",function(){
+                        var rule_html = '<p class="text-default fs-14">'
+                                +'订单实付金额需大于560元（含）；油箱可抵扣金额最高不超过每笔订单实付金额的5%'
+                                +'</p>'
+                        bOilApp.tips({
+                            title: '油箱抵扣使用规则',
+                            closeId: 'tipsCloseBtn',
+                            btnNums: 1,
+                            content: rule_html,
+                            btn: {
+                                btnSure: {
+                                    text: '我知道了',
+                                    href: 'car-manage.html',
+                                    btnStyle:"background-color: #f00; color: #fff;"
+                                }
+                            },
+                            fixedHeight: false,
+                            alone: true
+                        });
+                    });
 
                     // radio 开关 油箱抵扣
                     $("#deduct").on("click",function(){

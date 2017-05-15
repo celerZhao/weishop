@@ -37,11 +37,11 @@
                     <div class="pingjia-title fs-12">
                         <img src="./img/dazhongcard.png" alt="大众储油卡" class="chuyoucard">
                         <span class="star">
-                          <i class="pingjia-star start-light"></i>
-                          <i class="pingjia-star start-light"></i>
-                          <i class="pingjia-star start-light"></i>
-                          <i class="pingjia-star start-light"></i>
-                          <i class="pingjia-star start-light"></i>
+                          <i class="pingjia-star start-light pj-x"></i>
+                          <i class="pingjia-star start-light pj-x"></i>
+                          <i class="pingjia-star start-light pj-x"></i>
+                          <i class="pingjia-star start-light pj-x"></i>
+                          <i class="pingjia-star start-light pj-x"></i>
                         </span>
                         <span class="inline-block good" id="good">非常好</span>
                     </div>
@@ -87,7 +87,7 @@
                   $('.tex-area').focus();
                   $('#fabu').on('click', function() {
                     var areaVal = $('.tex-area').val()+'';
-                    if (areaVal.length >= 200) {
+                    if (areaVal.length > 200) {
                       bOilApp.alertMsg('字数不能超过200!',null,null,'Clear');
                     }else {
                       if (App.status) {

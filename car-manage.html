@@ -37,7 +37,7 @@
                 <li>
                     <label>行驶城市</label>
                     <div class="form-group mb-0">
-                        <input id="area"  class="form-control pr-15 text-right bg-white" readonly  placeholder="请选择" data-value="2,234" value="深圳" />
+                        <input id="area"  class="form-control pr-15 text-right bg-white" readonly  placeholder="请选择" data-value="2,234" province_city="广东省/深圳市" value="深圳" />
                     </div>
                     <i class="iconfont icon-jiantou-copy2"></i>
                 </li>
@@ -45,7 +45,7 @@
                     <label>车牌号码</label>
                     <div class="form-group mb-0">
                         <a class="form-control pr-15 text-right" href="javascript:;">
-                            <span>粤<i class="icon iconfont ml-5 rotate-90">&#xe688;</i></span>
+                            <span><span id="city_letter1">粤</span><i class="icon iconfont ml-5 rotate-90">&#xe688;</i></span>
                             <input id="carNumber" class="car-num" type="text" maxlength="7" placeholder="请写车牌号" value="">
                         </a>
                     </div>
@@ -99,6 +99,7 @@
             //是否后端开发状态(0前端，1后端)
             status: 0,
             isHaspwd: 0,
+            cityLetterDate:null,
 
             init: function() {
                 // 地区选择
@@ -118,6 +119,7 @@
                     level: 2,
                     callback:App.car_city
                 });
+                $("#area").attr("province_city","广东/深圳市");
 
                 // 常用油品
                 $("#commonOils .inner").on("click", function() {
@@ -170,11 +172,82 @@
                 });
             },
             car_city:function(){
-                var area= $("#area").val(),
-                        city = area.split("/")[1].replace("市","");
-                $("#area").val(city);
+                var area = $("#area").val();
+                var area_0 = area.split("/")[0];
+
+                if(area_0 == "北京市" || area_0 == "天津市" || area_0 == "上海市" || area_0 == "重庆市" || area_0 == "台湾省" ){
+                    $("#area").val(area.split("/")[0].replace("市", "").replace("省",""));
+                    $("#area").attr("province_city",area);
+                }else {
+                    var city = area.split("/")[1].replace("市", "");
+                    $("#area").val(city);
+                    $("#area").attr("province_city",area);
+                }
+                // 获取 省份简称-字母json
+                if (App.cityLetterData == null) {
+                    App.getCityLetterData(area);
+                } else {
+                    App.setLetter(area);
+                }
+
+            },
+            // 城市+字母 如：粤B
+            getCityLetterData:function(area){
+                $.ajax({
+                    url: "js/letter.json",
+                    success: function (json) {
+                        App.cityLetterData = json.data;
+                        App.setLetter(area);
+
+                    }
+                });
+
+            },
+            setLetter:function(area){
+                var cityLetters = App.cityLetterData;
+                var city_matched = false;
+                // 先匹配一级城市
+                for (var a in cityLetters) {
+
+                    var b = cityLetters[a],
+                            _break = false;
+                    for (var d in b) {
+                        if (area.split("/")[1].match(d) != null) {
+                            var city_letter = b[d];
+                            $("#city_letter1").html(city_letter.substring(0,1));
+                            $("#carNumber").val(city_letter.substring(1,2));
+                            _break = true;
+                            city_matched = true;
+                        }
+                    }
+                    if (_break){
+                        break
+                    }
+                }
+                // 一级城市没有结果，再匹配直辖市
+                if(!city_matched){
+                    for (var a in cityLetters) {
+
+                        var b = cityLetters[a],
+                                _break = false;
+                        for (var d in b) {
+                            if (area.split("/")[0].match(d) != null) {
+                                var city_letter = b[d];
+//                            $("#city_letter").html(city_letter);
+                                $("#city_letter1").html(city_letter.substring(0,1));
+                                $("#carNumber").val("a");
+                                _break = true;
+//                                city_match = true;
+                            }
+                        }
+                        if (_break){
+                            break
+                        }
+                    }
+                }
 
             }
+
         };
         $(function() {
             App.init();

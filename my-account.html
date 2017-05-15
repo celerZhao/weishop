@@ -101,38 +101,6 @@ setPxPerRem();
     <a id="submitBtn" class="btn btn-danger btn-danger2 btn-fixed radius0" href="javascript:;">下载APP去提油</a>
 </div>
 
-<!-- 查看详情 -->
-<!--<div class="details-wrap" style="display:none">
-  <div class="details-footer font-color">
-    <div class="details-header">
-      <span class="details-title">已购油量</span>
-      <span class="details-close">X</span>
-    </div>
-    <div class="details-content">
-      <ul class="list-unstyled list-two">
-          <li>
-            <span class="jifen">储油总量:</span>
-            <span class="jifen-desc">当前储油卡的升数总和</span>
-          </li>
-          <li>
-            <span class="jifen">购买成本:</span>
-            <span class="jifen-desc">当前储油卡购买时的支付金额总和</span>
-            </li>
-          <li>
-            <span class="jifen">持有市值:</span>
-            <span class="jifen-desc">当前储油卡升数总和*当前油价</span>
-          </li>
-      </ul>
-      <ul class="list-unstyled list-two">
-        <li>
-          <span class="jifen">积分邮箱:</span>
-          <span class="jifen-desc">客户可通过平台活动获取油品放于积分邮箱内在购买产品时进行价格抵扣</span>
-        </li>
-    </ul>
-    </div>
-  </div>
-</div>-->
-
 
 <script src="js/lib/jquery-1.11.3.min.js"></script>
 <script src="js/bOilPlugIn/bOilPlugIn.js"></script>
@@ -201,14 +169,14 @@ var bOilApp = new bOilPlugIn(),
                 title: '已购油量',
                 closeId: 'tipsCloseBtn',
                 btnNums: 0,
-                content: tip_html,/*
-                btn: {
-                    btnSure: {
-                        text: '立即填写',
-                        href: 'car-manage.html',
-                        btnStyle:"background-color: #f00; color: #fff;"
-                    }
-                },*/
+                content: tip_html,
+                // btn: {
+                //     btnSure: {
+                //         text: '立即填写',
+                //         href: 'car-manage.html',
+                //         btnStyle:"background-color: #f00; color: #fff;"
+                //     }
+                // },
                 fixedHeight: false,
                 alone: true,
                 bottom:true
@@ -229,7 +197,7 @@ var bOilApp = new bOilPlugIn(),
           }else if (val=='账号绑定') {
             // alert('账号绑定');
           }else if (val=='车主身份确认') {
-            window.location.href = 'car-manage.html'
+            window.location.href = 'car-manage.html';
           }
         })
     }

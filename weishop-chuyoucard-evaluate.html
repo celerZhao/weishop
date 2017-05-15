@@ -36,7 +36,7 @@
         <a href="javascript:;" class="text-pj">赠送多<i>10</i></a>
     </div>
     <div class="row pj-list">
-        <ul class="list-unstyled">
+        <ul class="list-unstyled" id="pingjia_list">
             <li class="mb-10">
                 <div class="pingjia">
                     <div class="pingjia-title fs-12">
@@ -117,7 +117,6 @@
                 </div>
             </li>
         </ul>
-    </ul>
   </div>
 </div>
   <a id="fixedBtn" class="btn btn-danger btn-danger2 btn-fixed pj-eval" href="weishop-order-confirm.html">立即购买</a>
@@ -134,7 +133,39 @@
                 init: function () {
                   bOilApp.fixedBtn('#fixedBtn');
                   App.isTitle();
+
+                    $(window).scroll(function() {
+                        var scrollTop = $(window).scrollTop()+ $(window).height();
+                        var lastli_offsetTop = $(".pingjia:last").offset().top;
+                        if(lastli_offsetTop<=scrollTop-80){ //判断滚动条位置
+                            // 加载更多评论
+                            App.load_more();
+
+                        }
+
+                    })
               },
+                // 加载更多
+                load_more:function(){
+                    console.log("ajax 加载更多");
+
+                    var _html = '  <li class="mb-10">'
+                                        +'<div class="pingjia">'
+                                        +'<div class="pingjia-title fs-12">'
+                                        +'<span>158****1245</span><span class="pl-15"><i class="pingjia-star start-light "></i><i class="pingjia-star "></i><i class="pingjia-star "></i><i class="pingjia-star "></i><i class="pingjia-star "></i></span>'
+                                        +'</div>'
+                                        +'<div class="fs-10 text-gray">'
+                                        +'<span>广东/深圳</span>&nbsp;<span>V汽油92#</span>&nbsp;<span>200升</span>'
+                                +'</div>'
+                                +'<div class="pingjia-content fs-12">用上满减券，确实优惠不少，就是不知道下次油价是涨是跌'
+                                +'</div>'
+                                +'</div>'
+                                +'</li>';
+                    for(i=0;i<10;i++){
+                        $("#pingjia_list").append($(_html));
+                    }
+
+                },
               // 当卖点标签为0时则不显示
               isTitle: function() {
                   $('.text-pj').each(function() {
