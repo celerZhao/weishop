@@ -187,7 +187,7 @@
                 var area = $("#area").val();
                 var area_0 = area.split("/")[0];
 
-                if(area_0 == "北京市" || area_0 == "天津市" || area_0 == "上海市" || area_0 == "重庆市" || area_0 == "台湾省" ){
+                if(area_0 == "北京市" || area_0 == "天津市" || area_0 == "上海市" || area_0 == "重庆市"  ){
                     $("#area").val(area.split("/")[0].replace("市", "").replace("省",""));
                     $("#area").attr("province_city",area);
                 }else {
