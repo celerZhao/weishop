@@ -13,7 +13,6 @@
     <title>全部评价</title>
     <link rel="stylesheet" href="css/global-mobile.css"/>
     <link rel="stylesheet" href="css/layout-mobile.css"/>
-    <link rel="stylesheet" href="css/dialog.css"/>
     <script>
         var cssEl = document.createElement('style');
         document.documentElement.firstElementChild.appendChild(cssEl);
@@ -150,7 +149,7 @@
                 load_more:function(){
                     console.log("ajax 加载更多");
                     App.addMore++;
-                    var _html = '  <li class="mb-10">'
+                    var _html = '  <li class="mb-10" id="">'
                                         +'<div class="pingjia">'
                                         +'<div class="pingjia-title fs-12">'
                                         +'<span>'+ App.addMore+'-158****1245</span><span class="pl-15"><i class="pingjia-star start-light "></i><i class="pingjia-star "></i><i class="pingjia-star "></i><i class="pingjia-star "></i><i class="pingjia-star "></i></span>'
@@ -164,6 +163,7 @@
                                 +'</li>';
                     for(i=0;i<10;i++){
                         $("#pingjia_list").append($(_html));
+
                     }
 
                 },
