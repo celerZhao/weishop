@@ -21,7 +21,7 @@
         document.documentElement.firstElementChild.appendChild(cssEl);
         function setPxPerRem() {
             var dpr = 1;
-            var pxPerRem = document.documentElement.clientWidth * dpr / 32;
+            var pxPerRem = document.documentElement.clientWidth * dpr / 36;
             if (pxPerRem < 10) pxPerRem = 10;
             if (pxPerRem > 20) pxPerRem = 20;
             cssEl.innerHTML = 'html{font-size:' + pxPerRem + 'px!important;}';
